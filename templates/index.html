@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超弦奇点量子终端 - Superstring Singularity Quantum Terminal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.19.0/css/xterm.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a1a2a 100%);
+            font-family: 'Courier New', monospace;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header {
+            background: rgba(0, 20, 40, 0.9);
+            padding: 15px 25px;
+            border-bottom: 2px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        .header h1 {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            font-size: 1.5em;
+        }
+        .header .subtitle {
+            color: #88ff88;
+            font-size: 0.9em;
+        }
+        #terminal-container {
+            height: calc(100vh - 80px);
+            padding: 10px;
+        }
+        #terminal {
+            height: 100%;
+            border: 1px solid #00ffff;
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>超弦奇点量子终端</h1>
+        <div class="subtitle">Superstring Singularity Quantum Terminal v1.0</div>
+    </div>
+    <div id="terminal-container">
+        <div id="terminal"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.19.0/lib/xterm.js"></script>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script>
+        const term = new Terminal({
+            theme: {
+                background: '#0a0a1a',
+                foreground: '#00ffff',
+                cursor: '#00ff00'
+            },
+            fontSize: 14,
+            fontFamily: 'Courier New, monospace'
+        });
+        
+        const socket = io();
+        const terminalElement = document.getElementById('terminal');
+        term.open(terminalElement);
+        
+        term.write('\x1b[32m欢迎使用超弦奇点量子终端！\x1b[0m\r\n');
+        term.write('正在连接服务器...\r\n');
+        
+        socket.on('connect', () => {
+            term.write('\x1b[32m✓ 已连接到量子服务器\x1b[0m\r\n');
+        });
+        
+        socket.on('output', (data) => {
+            term.write(data);
+        });
+        
+        socket.on('disconnect', () => {
+            term.write('\x1b[31m✗ 与服务器断开连接\x1b[0m\r\n');
+        });
+        
+        term.onData((data) => {
+            socket.emit('input', data);
+        });
+    </script>
+</body>
+</html>
