@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/workspace/src",
+    "rule": "important",
+    "information": "Source code directory",
+    "more": "project files",
+    "logs": [
+      "2026-05-18:initial collection",
+      "2026-05-18:system setup"
+    ],
+    "collected_at": "2026-05-18T23:44:59.968491"
+  },
+  {
+    "path": "/workspace/README.md",
+    "rule": "important",
+    "information": "Project documentation",
+    "more": "docs",
+    "logs": [
+      "2026-05-18:added README"
+    ],
+    "collected_at": "2026-05-18T23:44:59.968508"
+  },
+  {
+    "path": "/workspace/requirements.txt",
+    "rule": "config",
+    "information": "Dependency configuration",
+    "more": "setup",
+    "logs": [
+      "2026-05-18:config file"
+    ],
+    "collected_at": "2026-05-18T23:44:59.968515"
+  },
+  {
+    "path": "/workspace/LICENSE",
+    "rule": "legal",
+    "information": "License file",
+    "more": "legal docs",
+    "logs": [
+      "2026-05-18:legal document"
+    ],
+    "collected_at": "2026-05-18T23:44:59.968520"
+  }
+]

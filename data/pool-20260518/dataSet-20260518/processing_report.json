@@ -1,0 +1,435 @@
+{
+  "distillation": {
+    "hash_map": {
+      "7c112ab49449c48db6a6a985150501254f5dd125b95d42e3735d6df9c02b6b7b": "/workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+      "5f4c9e99bcdbd4cf3d8cec39670b66881c409699e342ac6a4647743071c51f36": "/workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+      "83eed467dbc1d80f92bb0f9296f0bcbbe6eae7990247c5d8d91466d9c47fbd02": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+      "c48021da98d13eb0dcaeb8655dde1c9da76b8f62505fe40a242f49fc5c60cc46": "/workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+      "83de65a8924907b86956319b8c1b6a1448f29d6a42c70d38324ba6e19bb3c619": "/workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+      "d0a43ed90847c54aeec29ac60e964bd8448c066fbaa420ca47af33e63987cb58": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+      "06518b6ca0a6cc7cac46307854b1e5c9bbaa1ea8dde189d1eec27a30a49908f8": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+      "cd0c3f3774f15277bb923d6d701cddc5fe395fe7a9651a6794a93853c174939e": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+      "a62e54252dc60da8edc6060b289e6810e472112adb4adb33fa114e62678325cd": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+      "c94c6c49671a4fb944ab03f633763d5a22606a893df3545daa53745816756808": "/workspace/data/pool-20260518/dataSet-20260518/collection_logs.json",
+      "2da324f4a3e839f9bf34c2e5c7ec77112d5ffea7085a2d9a3e0318e32dbafd4a": "/workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+      "89fe529450fa587e8ac9936ad7c17ae80e4d7ed13c4e7d18ffd41307483c4618": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+      "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e": "/workspace/data/pool-20260518/dataSet-20260518/LICENSE",
+      "719b5667d685f2668dc50c4c408f2e3bba2e04d922782c5ce9e0befbbc484ea9": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+      "6c0661d15ca332571760ee82c261d125bbfafd2342e39e34fd1b00153c60c1bd": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+      "bba35bbda35fc905cab0960ef2f253a5b89eeac25ef9c8e2fc28d55bceac91aa": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+      "40e943554591dbae3a471f4d881bc45e27c599c017fa3adbc68cef785df6116c": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+      "17a228a89a1798505627205d6fa3089d6ca6084fba028303dac9f2352cdaeaf6": "/workspace/data/pool-20260518/dataSet-20260518/README.md",
+      "5bc4ede0c8bc9fca009f1816bc53f615b9501ae8ee39030234944af7bac95298": "/workspace/data/pool-20260518/dataSet-20260518/logging.py",
+      "2475d3ad3a1d1e3c0d09102a567500efbff7d590dc856016f4f8a2560ec9ffba": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+      "070ba78551bff20c30e6c8cbc0db24b32d7c3a2707b50ee2a681644fcade798f": "/workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+      "1a17048a3933b9360af4195e044417acfe3970f0a55514aec7963f6461306691": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+      "9d2eb85f89d1a814a232d7e69e8ec098ced33ce79602cc9237f0820b265f175d": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+      "994e59ff977b2b4c2e598e83bb5c57c7045b1caf286f83d71e5d11b67c15ca12": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+      "58362c8423630f9a376930c973e11f4aa99960acfff0c94f414dc060300706f1": "/workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+      "b99e83b0f086df355d93ff804c08f810069f6222043f22fcc8e615ccb1817482": "/workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+      "5c3436997fa0424669d7ffacbd0af0712c886ee40b940e6279cfcdbd330cffd2": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+      "98d79bbd4499eabcd17c27668d6c5d3f408cd08a81a2d21dccf2d1f300dc3d8b": "/workspace/data/pool-20260518/dataSet-20260518/collection_info.json",
+      "d07b620dffd4c36a6081787b50b6c2c1e8f1a46290d4f042c2eae5e8943f21d4": "/workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+      "c7e9a25bcc8c35e74ac447ba103906fc32ae2bb84e77b1c08bd37acac0fe56ee": "/workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+      "8dac6443d755d6370921a8fb6120dbd10817ec0a51406fcda03dbe534f9d7fb7": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+      "115effff5e9c4a062f3ba9f48cab6cdae51655b86875d9adc2abb805a21e1357": "/workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+      "ee963519335c7ad7f42647d762222cf7bbf9dfbbcda3139bf6f9d1c6c2c6c222": "/workspace/data/pool-20260518/dataSet-20260518/database.py",
+      "c82d8728d4590b50b70d99004cb6dcac9dc59d4a53a84b5042a781a768d31f2a": "/workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+      "e0781193978832761989b7b1d3c1911fcf772d9c123d0bd9c89143339d45e020": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+      "17662dd0b6f7a195c40174c61921ef4fdf15a2b65455157b9a82d27c6b91850d": "/workspace/data/pool-20260518/dataSet-20260518/config.py",
+      "f1e0f889f9957e9404ad711229c1366ae068694d700e60cb7f05f382f6dcc76b": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+      "252804c315dc8bd7a3ac9da4dd060f96ea7a5fb70fe1b0f7cc2a8e19dd012ed7": "/workspace/data/pool-20260518/dataSet-20260518/requirements.txt",
+      "ce999df76bff741e3de49b7ca26c5d70a9ea840cc7f9504e4d8d57db665168d3": "/workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc"
+    },
+    "removed_duplicates": [],
+    "index": {
+      "total_files": 39,
+      "total_size": 124601,
+      "files": [
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+          "relative_path": "logging.cpython-314.pyc",
+          "size": 1467,
+          "hash": "7c112ab49449c48db6a6a985150501254f5dd125b95d42e3735d6df9c02b6b7b",
+          "modified": 1779147877.0512507
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+          "relative_path": "__init___4.py",
+          "size": 131,
+          "hash": "5f4c9e99bcdbd4cf3d8cec39670b66881c409699e342ac6a4647743071c51f36",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+          "relative_path": "dataset_distiller.cpython-314.pyc",
+          "size": 5291,
+          "hash": "83eed467dbc1d80f92bb0f9296f0bcbbe6eae7990247c5d8d91466d9c47fbd02",
+          "modified": 1779147877.055251
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+          "relative_path": "__init___1.py",
+          "size": 109,
+          "hash": "c48021da98d13eb0dcaeb8655dde1c9da76b8f62505fe40a242f49fc5c60cc46",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+          "relative_path": "helpers.py",
+          "size": 809,
+          "hash": "83de65a8924907b86956319b8c1b6a1448f29d6a42c70d38324ba6e19bb3c619",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+          "relative_path": "dataset_distiller.py",
+          "size": 3510,
+          "hash": "d0a43ed90847c54aeec29ac60e964bd8448c066fbaa420ca47af33e63987cb58",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+          "relative_path": "gpg_encryptor.cpython-314.pyc",
+          "size": 4559,
+          "hash": "06518b6ca0a6cc7cac46307854b1e5c9bbaa1ea8dde189d1eec27a30a49908f8",
+          "modified": 1779147877.0592508
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+          "relative_path": "git_manager.cpython-314.pyc",
+          "size": 5378,
+          "hash": "cd0c3f3774f15277bb923d6d701cddc5fe395fe7a9651a6794a93853c174939e",
+          "modified": 1779147877.075251
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+          "relative_path": "__init__.cpython-314_4.pyc",
+          "size": 281,
+          "hash": "a62e54252dc60da8edc6060b289e6810e472112adb4adb33fa114e62678325cd",
+          "modified": 1779147877.0592508
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/collection_logs.json",
+          "relative_path": "collection_logs.json",
+          "size": 11325,
+          "hash": "c94c6c49671a4fb944ab03f633763d5a22606a893df3545daa53745816756808",
+          "modified": 1779147899.9875553
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+          "relative_path": "__init___2.py",
+          "size": 112,
+          "hash": "2da324f4a3e839f9bf34c2e5c7ec77112d5ffea7085a2d9a3e0318e32dbafd4a",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+          "relative_path": "csv_parser.cpython-314.pyc",
+          "size": 4989,
+          "hash": "89fe529450fa587e8ac9936ad7c17ae80e4d7ed13c4e7d18ffd41307483c4618",
+          "modified": 1779147899.731552
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/LICENSE",
+          "relative_path": "LICENSE",
+          "size": 1211,
+          "hash": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+          "modified": 1779147793.8701468
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+          "relative_path": "data_collector.py",
+          "size": 3444,
+          "hash": "719b5667d685f2668dc50c4c408f2e3bba2e04d922782c5ce9e0befbbc484ea9",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+          "relative_path": "git_manager.py",
+          "size": 3174,
+          "hash": "6c0661d15ca332571760ee82c261d125bbfafd2342e39e34fd1b00153c60c1bd",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+          "relative_path": "__init__.cpython-314_2.pyc",
+          "size": 256,
+          "hash": "bba35bbda35fc905cab0960ef2f253a5b89eeac25ef9c8e2fc28d55bceac91aa",
+          "modified": 1779147877.055251
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+          "relative_path": "data_collector.cpython-314.pyc",
+          "size": 6267,
+          "hash": "40e943554591dbae3a471f4d881bc45e27c599c017fa3adbc68cef785df6116c",
+          "modified": 1779147877.0512507
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/README.md",
+          "relative_path": "README.md",
+          "size": 1860,
+          "hash": "17a228a89a1798505627205d6fa3089d6ca6084fba028303dac9f2352cdaeaf6",
+          "modified": 1779147795.8981738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/logging.py",
+          "relative_path": "logging.py",
+          "size": 778,
+          "hash": "5bc4ede0c8bc9fca009f1816bc53f615b9501ae8ee39030234944af7bac95298",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+          "relative_path": "data_processor.cpython-314.pyc",
+          "size": 2116,
+          "hash": "2475d3ad3a1d1e3c0d09102a567500efbff7d590dc856016f4f8a2560ec9ffba",
+          "modified": 1779147877.055251
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+          "relative_path": "compressor.cpython-314.pyc",
+          "size": 4952,
+          "hash": "070ba78551bff20c30e6c8cbc0db24b32d7c3a2707b50ee2a681644fcade798f",
+          "modified": 1779147877.063251
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+          "relative_path": "data_processor.py",
+          "size": 1097,
+          "hash": "1a17048a3933b9360af4195e044417acfe3970f0a55514aec7963f6461306691",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+          "relative_path": "__init__.cpython-314_1.pyc",
+          "size": 321,
+          "hash": "9d2eb85f89d1a814a232d7e69e8ec098ced33ce79602cc9237f0820b265f175d",
+          "modified": 1779147876.8712485
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+          "relative_path": "__init__.cpython-314_3.pyc",
+          "size": 203,
+          "hash": "994e59ff977b2b4c2e598e83bb5c57c7045b1caf286f83d71e5d11b67c15ca12",
+          "modified": 1779147877.0712512
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+          "relative_path": "__init___5.py",
+          "size": 98,
+          "hash": "58362c8423630f9a376930c973e11f4aa99960acfff0c94f414dc060300706f1",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+          "relative_path": "__init___3.py",
+          "size": 53,
+          "hash": "b99e83b0f086df355d93ff804c08f810069f6222043f22fcc8e615ccb1817482",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+          "relative_path": "csv_parser.py",
+          "size": 2707,
+          "hash": "5c3436997fa0424669d7ffacbd0af0712c886ee40b940e6279cfcdbd330cffd2",
+          "modified": 1779147891.4794424
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/collection_info.json",
+          "relative_path": "collection_info.json",
+          "size": 35903,
+          "hash": "98d79bbd4499eabcd17c27668d6c5d3f408cd08a81a2d21dccf2d1f300dc3d8b",
+          "modified": 1779147899.9875553
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+          "relative_path": "compressor.py",
+          "size": 2792,
+          "hash": "d07b620dffd4c36a6081787b50b6c2c1e8f1a46290d4f042c2eae5e8943f21d4",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+          "relative_path": "helpers.cpython-314.pyc",
+          "size": 2170,
+          "hash": "c7e9a25bcc8c35e74ac447ba103906fc32ae2bb84e77b1c08bd37acac0fe56ee",
+          "modified": 1779147877.0512507
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+          "relative_path": "gpg_encryptor.py",
+          "size": 3184,
+          "hash": "8dac6443d755d6370921a8fb6120dbd10817ec0a51406fcda03dbe534f9d7fb7",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+          "relative_path": "__init__.py",
+          "size": 141,
+          "hash": "115effff5e9c4a062f3ba9f48cab6cdae51655b86875d9adc2abb805a21e1357",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/database.py",
+          "relative_path": "database.py",
+          "size": 3511,
+          "hash": "ee963519335c7ad7f42647d762222cf7bbf9dfbbcda3139bf6f9d1c6c2c6c222",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+          "relative_path": "database.cpython-314.pyc",
+          "size": 7081,
+          "hash": "c82d8728d4590b50b70d99004cb6dcac9dc59d4a53a84b5042a781a768d31f2a",
+          "modified": 1779147877.0712512
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+          "relative_path": "__init__.cpython-314.pyc",
+          "size": 266,
+          "hash": "e0781193978832761989b7b1d3c1911fcf772d9c123d0bd9c89143339d45e020",
+          "modified": 1779147877.0472507
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/config.py",
+          "relative_path": "config.py",
+          "size": 783,
+          "hash": "17662dd0b6f7a195c40174c61921ef4fdf15a2b65455157b9a82d27c6b91850d",
+          "modified": 1779147795.9061737
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+          "relative_path": "__init__.cpython-314_5.pyc",
+          "size": 249,
+          "hash": "f1e0f889f9957e9404ad711229c1366ae068694d700e60cb7f05f382f6dcc76b",
+          "modified": 1779147876.8752484
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/requirements.txt",
+          "relative_path": "requirements.txt",
+          "size": 17,
+          "hash": "252804c315dc8bd7a3ac9da4dd060f96ea7a5fb70fe1b0f7cc2a8e19dd012ed7",
+          "modified": 1779147795.9021738
+        },
+        {
+          "path": "/workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc",
+          "relative_path": "config.cpython-314.pyc",
+          "size": 2006,
+          "hash": "ce999df76bff741e3de49b7ca26c5d70a9ea840cc7f9504e4d8d57db665168d3",
+          "modified": 1779147877.0472507
+        }
+      ],
+      "groups": {
+        ".pyc": [
+          "/workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+          "/workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc"
+        ],
+        ".py": [
+          "/workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/logging.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/database.py",
+          "/workspace/data/pool-20260518/dataSet-20260518/config.py"
+        ],
+        ".json": [
+          "/workspace/data/pool-20260518/dataSet-20260518/collection_logs.json",
+          "/workspace/data/pool-20260518/dataSet-20260518/collection_info.json"
+        ],
+        "": [
+          "/workspace/data/pool-20260518/dataSet-20260518/LICENSE"
+        ],
+        ".md": [
+          "/workspace/data/pool-20260518/dataSet-20260518/README.md"
+        ],
+        ".txt": [
+          "/workspace/data/pool-20260518/dataSet-20260518/requirements.txt"
+        ]
+      }
+    },
+    "groups": {
+      ".pyc": [
+        "/workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+        "/workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc"
+      ],
+      ".py": [
+        "/workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/logging.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/database.py",
+        "/workspace/data/pool-20260518/dataSet-20260518/config.py"
+      ],
+      ".json": [
+        "/workspace/data/pool-20260518/dataSet-20260518/collection_logs.json",
+        "/workspace/data/pool-20260518/dataSet-20260518/collection_info.json"
+      ],
+      "": [
+        "/workspace/data/pool-20260518/dataSet-20260518/LICENSE"
+      ],
+      ".md": [
+        "/workspace/data/pool-20260518/dataSet-20260518/README.md"
+      ],
+      ".txt": [
+        "/workspace/data/pool-20260518/dataSet-20260518/requirements.txt"
+      ]
+    }
+  },
+  "processing_info": {
+    "processed_at": "2026-05-18T23:45:00.001577",
+    "dataset_dir": "/workspace/data/pool-20260518/dataSet-20260518"
+  }
+}

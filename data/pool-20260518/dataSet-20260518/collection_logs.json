@@ -1,0 +1,261 @@
+[
+  {
+    "timestamp": "2026-05-18T23:44:59.970321",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.971138",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/helpers.py -> /workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.971737",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/logging.py -> /workspace/data/pool-20260518/dataSet-20260518/logging.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.972282",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.972816",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/config.py -> /workspace/data/pool-20260518/dataSet-20260518/config.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.973491",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/__pycache__/logging.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.974048",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/__pycache__/helpers.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.974571",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.975110",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/utils/__pycache__/config.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.975746",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.976372",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/dataset_distiller.py -> /workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.976887",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/data_processor.py -> /workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.977405",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.978066",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/__pycache__/dataset_distiller.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.978609",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/__pycache__/data_processor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.979133",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/processor/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.979769",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/git_manager/git_manager.py -> /workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.980287",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/git_manager/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.980915",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/git_manager/__pycache__/git_manager.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.981433",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/git_manager/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.982076",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/compressor.py -> /workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.982588",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/gpg_encryptor.py -> /workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.983118",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.983659",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/database.py -> /workspace/data/pool-20260518/dataSet-20260518/database.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.984293",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/__pycache__/gpg_encryptor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.984815",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/__pycache__/compressor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.985349",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/__pycache__/database.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.985887",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/encryptor/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.986526",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/data_collector.py -> /workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.987053",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/csv_parser.py -> /workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.987587",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.988222",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/__pycache__/csv_parser.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.988740",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/__pycache__/data_collector.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.989261",
+    "path": "/workspace/src",
+    "message": "Collected file: /workspace/src/collector/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+    "rule": "important",
+    "information": "Source code directory"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.989789",
+    "path": "/workspace/README.md",
+    "message": "Collected file: /workspace/README.md -> /workspace/data/pool-20260518/dataSet-20260518/README.md",
+    "rule": "important",
+    "information": "Project documentation"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.990291",
+    "path": "/workspace/requirements.txt",
+    "message": "Collected file: /workspace/requirements.txt -> /workspace/data/pool-20260518/dataSet-20260518/requirements.txt",
+    "rule": "config",
+    "information": "Dependency configuration"
+  },
+  {
+    "timestamp": "2026-05-18T23:44:59.990799",
+    "path": "/workspace/LICENSE",
+    "message": "Collected file: /workspace/LICENSE -> /workspace/data/pool-20260518/dataSet-20260518/LICENSE",
+    "rule": "legal",
+    "information": "License file"
+  }
+]

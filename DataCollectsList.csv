@@ -1,0 +1,5 @@
+path,rule,infomation,more,[logs]
+/workspace/src,important,Source code directory,project files,2026-05-18:initial collection|2026-05-18:system setup
+/workspace/README.md,important,Project documentation,docs,2026-05-18:added README
+/workspace/requirements.txt,config,Dependency configuration,setup,2026-05-18:config file
+/workspace/LICENSE,legal,License file,legal docs,2026-05-18:legal document

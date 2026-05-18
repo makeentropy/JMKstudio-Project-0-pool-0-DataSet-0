@@ -1,0 +1,930 @@
+{
+  "collected_at": "2026-05-18T23:44:59.990815",
+  "total_files": 37,
+  "files": [
+    {
+      "path": "/workspace/src/__init__.py",
+      "size": 141,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "115effff5e9c4a062f3ba9f48cab6cdae51655b86875d9adc2abb805a21e1357",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/helpers.py",
+      "size": 809,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "83de65a8924907b86956319b8c1b6a1448f29d6a42c70d38324ba6e19bb3c619",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/logging.py",
+      "size": 778,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "5bc4ede0c8bc9fca009f1816bc53f615b9501ae8ee39030234944af7bac95298",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/logging.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/__init__.py",
+      "size": 109,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "c48021da98d13eb0dcaeb8655dde1c9da76b8f62505fe40a242f49fc5c60cc46",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/config.py",
+      "size": 783,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "17662dd0b6f7a195c40174c61921ef4fdf15a2b65455157b9a82d27c6b91850d",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/config.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/__pycache__/logging.cpython-314.pyc",
+      "size": 1467,
+      "modified": "2026-05-18T23:44:37.051251",
+      "hash": "7c112ab49449c48db6a6a985150501254f5dd125b95d42e3735d6df9c02b6b7b",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/__pycache__/helpers.cpython-314.pyc",
+      "size": 2170,
+      "modified": "2026-05-18T23:44:37.051251",
+      "hash": "c7e9a25bcc8c35e74ac447ba103906fc32ae2bb84e77b1c08bd37acac0fe56ee",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/__pycache__/__init__.cpython-314.pyc",
+      "size": 266,
+      "modified": "2026-05-18T23:44:37.047251",
+      "hash": "e0781193978832761989b7b1d3c1911fcf772d9c123d0bd9c89143339d45e020",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/utils/__pycache__/config.cpython-314.pyc",
+      "size": 2006,
+      "modified": "2026-05-18T23:44:37.047251",
+      "hash": "ce999df76bff741e3de49b7ca26c5d70a9ea840cc7f9504e4d8d57db665168d3",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/__pycache__/__init__.cpython-314.pyc",
+      "size": 321,
+      "modified": "2026-05-18T23:44:36.871248",
+      "hash": "9d2eb85f89d1a814a232d7e69e8ec098ced33ce79602cc9237f0820b265f175d",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/dataset_distiller.py",
+      "size": 3510,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "d0a43ed90847c54aeec29ac60e964bd8448c066fbaa420ca47af33e63987cb58",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/data_processor.py",
+      "size": 1097,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "1a17048a3933b9360af4195e044417acfe3970f0a55514aec7963f6461306691",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/__init__.py",
+      "size": 112,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "2da324f4a3e839f9bf34c2e5c7ec77112d5ffea7085a2d9a3e0318e32dbafd4a",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/__pycache__/dataset_distiller.cpython-314.pyc",
+      "size": 5291,
+      "modified": "2026-05-18T23:44:37.055251",
+      "hash": "83eed467dbc1d80f92bb0f9296f0bcbbe6eae7990247c5d8d91466d9c47fbd02",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/__pycache__/data_processor.cpython-314.pyc",
+      "size": 2116,
+      "modified": "2026-05-18T23:44:37.055251",
+      "hash": "2475d3ad3a1d1e3c0d09102a567500efbff7d590dc856016f4f8a2560ec9ffba",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/processor/__pycache__/__init__.cpython-314.pyc",
+      "size": 256,
+      "modified": "2026-05-18T23:44:37.055251",
+      "hash": "bba35bbda35fc905cab0960ef2f253a5b89eeac25ef9c8e2fc28d55bceac91aa",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/git_manager/git_manager.py",
+      "size": 3174,
+      "modified": "2026-05-18T23:43:15.906174",
+      "hash": "6c0661d15ca332571760ee82c261d125bbfafd2342e39e34fd1b00153c60c1bd",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/git_manager/__init__.py",
+      "size": 53,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "b99e83b0f086df355d93ff804c08f810069f6222043f22fcc8e615ccb1817482",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/git_manager/__pycache__/git_manager.cpython-314.pyc",
+      "size": 5378,
+      "modified": "2026-05-18T23:44:37.075251",
+      "hash": "cd0c3f3774f15277bb923d6d701cddc5fe395fe7a9651a6794a93853c174939e",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/git_manager/__pycache__/__init__.cpython-314.pyc",
+      "size": 203,
+      "modified": "2026-05-18T23:44:37.071251",
+      "hash": "994e59ff977b2b4c2e598e83bb5c57c7045b1caf286f83d71e5d11b67c15ca12",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/compressor.py",
+      "size": 2792,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "d07b620dffd4c36a6081787b50b6c2c1e8f1a46290d4f042c2eae5e8943f21d4",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/gpg_encryptor.py",
+      "size": 3184,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "8dac6443d755d6370921a8fb6120dbd10817ec0a51406fcda03dbe534f9d7fb7",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/__init__.py",
+      "size": 131,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "5f4c9e99bcdbd4cf3d8cec39670b66881c409699e342ac6a4647743071c51f36",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/database.py",
+      "size": 3511,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "ee963519335c7ad7f42647d762222cf7bbf9dfbbcda3139bf6f9d1c6c2c6c222",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/database.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/__pycache__/gpg_encryptor.cpython-314.pyc",
+      "size": 4559,
+      "modified": "2026-05-18T23:44:37.059251",
+      "hash": "06518b6ca0a6cc7cac46307854b1e5c9bbaa1ea8dde189d1eec27a30a49908f8",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/__pycache__/compressor.cpython-314.pyc",
+      "size": 4952,
+      "modified": "2026-05-18T23:44:37.063251",
+      "hash": "070ba78551bff20c30e6c8cbc0db24b32d7c3a2707b50ee2a681644fcade798f",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/__pycache__/database.cpython-314.pyc",
+      "size": 7081,
+      "modified": "2026-05-18T23:44:37.071251",
+      "hash": "c82d8728d4590b50b70d99004cb6dcac9dc59d4a53a84b5042a781a768d31f2a",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/encryptor/__pycache__/__init__.cpython-314.pyc",
+      "size": 281,
+      "modified": "2026-05-18T23:44:37.059251",
+      "hash": "a62e54252dc60da8edc6060b289e6810e472112adb4adb33fa114e62678325cd",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/data_collector.py",
+      "size": 3444,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "719b5667d685f2668dc50c4c408f2e3bba2e04d922782c5ce9e0befbbc484ea9",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/csv_parser.py",
+      "size": 2707,
+      "modified": "2026-05-18T23:44:51.479442",
+      "hash": "5c3436997fa0424669d7ffacbd0af0712c886ee40b940e6279cfcdbd330cffd2",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/__init__.py",
+      "size": 98,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "58362c8423630f9a376930c973e11f4aa99960acfff0c94f414dc060300706f1",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/__pycache__/csv_parser.cpython-314.pyc",
+      "size": 4989,
+      "modified": "2026-05-18T23:44:59.731552",
+      "hash": "89fe529450fa587e8ac9936ad7c17ae80e4d7ed13c4e7d18ffd41307483c4618",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/__pycache__/data_collector.cpython-314.pyc",
+      "size": 6267,
+      "modified": "2026-05-18T23:44:37.051251",
+      "hash": "40e943554591dbae3a471f4d881bc45e27c599c017fa3adbc68cef785df6116c",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/src/collector/__pycache__/__init__.cpython-314.pyc",
+      "size": 249,
+      "modified": "2026-05-18T23:44:36.875248",
+      "hash": "f1e0f889f9957e9404ad711229c1366ae068694d700e60cb7f05f382f6dcc76b",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+      "entry_info": {
+        "path": "/workspace/src",
+        "rule": "important",
+        "information": "Source code directory",
+        "more": "project files",
+        "logs": [
+          "2026-05-18:initial collection",
+          "2026-05-18:system setup"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968491"
+      }
+    },
+    {
+      "path": "/workspace/README.md",
+      "size": 1860,
+      "modified": "2026-05-18T23:43:15.898174",
+      "hash": "17a228a89a1798505627205d6fa3089d6ca6084fba028303dac9f2352cdaeaf6",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/README.md",
+      "entry_info": {
+        "path": "/workspace/README.md",
+        "rule": "important",
+        "information": "Project documentation",
+        "more": "docs",
+        "logs": [
+          "2026-05-18:added README"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968508"
+      }
+    },
+    {
+      "path": "/workspace/requirements.txt",
+      "size": 17,
+      "modified": "2026-05-18T23:43:15.902174",
+      "hash": "252804c315dc8bd7a3ac9da4dd060f96ea7a5fb70fe1b0f7cc2a8e19dd012ed7",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/requirements.txt",
+      "entry_info": {
+        "path": "/workspace/requirements.txt",
+        "rule": "config",
+        "information": "Dependency configuration",
+        "more": "setup",
+        "logs": [
+          "2026-05-18:config file"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968515"
+      }
+    },
+    {
+      "path": "/workspace/LICENSE",
+      "size": 1211,
+      "modified": "2026-05-18T23:43:13.870147",
+      "hash": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+      "dest_path": "/workspace/data/pool-20260518/dataSet-20260518/LICENSE",
+      "entry_info": {
+        "path": "/workspace/LICENSE",
+        "rule": "legal",
+        "information": "License file",
+        "more": "legal docs",
+        "logs": [
+          "2026-05-18:legal document"
+        ],
+        "collected_at": "2026-05-18T23:44:59.968520"
+      }
+    }
+  ],
+  "logs": [
+    {
+      "timestamp": "2026-05-18T23:44:59.970321",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init__.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.971138",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/helpers.py -> /workspace/data/pool-20260518/dataSet-20260518/helpers.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.971737",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/logging.py -> /workspace/data/pool-20260518/dataSet-20260518/logging.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.972282",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___1.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.972816",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/config.py -> /workspace/data/pool-20260518/dataSet-20260518/config.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.973491",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/__pycache__/logging.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/logging.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.974048",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/__pycache__/helpers.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/helpers.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.974571",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.975110",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/utils/__pycache__/config.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/config.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.975746",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_1.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.976372",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/dataset_distiller.py -> /workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.976887",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/data_processor.py -> /workspace/data/pool-20260518/dataSet-20260518/data_processor.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.977405",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___2.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.978066",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/__pycache__/dataset_distiller.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/dataset_distiller.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.978609",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/__pycache__/data_processor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/data_processor.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.979133",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/processor/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_2.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.979769",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/git_manager/git_manager.py -> /workspace/data/pool-20260518/dataSet-20260518/git_manager.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.980287",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/git_manager/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___3.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.980915",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/git_manager/__pycache__/git_manager.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/git_manager.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.981433",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/git_manager/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_3.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.982076",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/compressor.py -> /workspace/data/pool-20260518/dataSet-20260518/compressor.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.982588",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/gpg_encryptor.py -> /workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.983118",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___4.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.983659",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/database.py -> /workspace/data/pool-20260518/dataSet-20260518/database.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.984293",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/__pycache__/gpg_encryptor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/gpg_encryptor.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.984815",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/__pycache__/compressor.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/compressor.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.985349",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/__pycache__/database.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/database.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.985887",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/encryptor/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_4.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.986526",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/data_collector.py -> /workspace/data/pool-20260518/dataSet-20260518/data_collector.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.987053",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/csv_parser.py -> /workspace/data/pool-20260518/dataSet-20260518/csv_parser.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.987587",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/__init__.py -> /workspace/data/pool-20260518/dataSet-20260518/__init___5.py",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.988222",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/__pycache__/csv_parser.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/csv_parser.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.988740",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/__pycache__/data_collector.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/data_collector.cpython-314.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.989261",
+      "path": "/workspace/src",
+      "message": "Collected file: /workspace/src/collector/__pycache__/__init__.cpython-314.pyc -> /workspace/data/pool-20260518/dataSet-20260518/__init__.cpython-314_5.pyc",
+      "rule": "important",
+      "information": "Source code directory"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.989789",
+      "path": "/workspace/README.md",
+      "message": "Collected file: /workspace/README.md -> /workspace/data/pool-20260518/dataSet-20260518/README.md",
+      "rule": "important",
+      "information": "Project documentation"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.990291",
+      "path": "/workspace/requirements.txt",
+      "message": "Collected file: /workspace/requirements.txt -> /workspace/data/pool-20260518/dataSet-20260518/requirements.txt",
+      "rule": "config",
+      "information": "Dependency configuration"
+    },
+    {
+      "timestamp": "2026-05-18T23:44:59.990799",
+      "path": "/workspace/LICENSE",
+      "message": "Collected file: /workspace/LICENSE -> /workspace/data/pool-20260518/dataSet-20260518/LICENSE",
+      "rule": "legal",
+      "information": "License file"
+    }
+  ]
+}
