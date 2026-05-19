@@ -1,0 +1,17 @@
+{
+  "dataset_id": "final_20260519_204550",
+  "name": "dataset_20260519_203742",
+  "description": null,
+  "source": "final",
+  "created_at": "2026-05-19T20:45:50.156715",
+  "updated_at": "2026-05-19T20:45:50.156730",
+  "data_count": 6,
+  "file_size": 2682,
+  "file_path": "/workspace/data/final/dataset_20260519_203742",
+  "tags": [
+    "final"
+  ],
+  "version": "1.0.0",
+  "checksum": null,
+  "custom_fields": {}
+}
