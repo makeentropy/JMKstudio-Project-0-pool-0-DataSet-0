@@ -1,0 +1,21 @@
+{
+  "model_name": "pipeline_model",
+  "status": "completed",
+  "dataset_info": {
+    "train_count": 1,
+    "val_count": 0,
+    "test_count": 0,
+    "prepared_at": "2026-05-19T23:09:15.167738"
+  },
+  "config": {
+    "model_type": "agent_job",
+    "epochs": 10,
+    "learning_rate": 0.001
+  },
+  "trained_at": "2026-05-19T23:09:15.167742",
+  "metrics": {
+    "accuracy": 0.85,
+    "loss": 0.35,
+    "epochs": 10
+  }
+}
