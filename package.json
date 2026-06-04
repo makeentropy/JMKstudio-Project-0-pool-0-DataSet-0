@@ -1,0 +1,31 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "workspace",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://x-access-token:ghu_z26iioif2Vj6TE1DY9LQF9UDZN9lnA1RCAIv@github.com/makeentropy/JMKstudio-Project-0-pool-0-DataSet-0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/makeentropy/JMKstudio-Project-0-pool-0-DataSet-0/issues"
+  },
+  "homepage": "https://github.com/makeentropy/JMKstudio-Project-0-pool-0-DataSet-0#readme",
+  "dependencies": {
+    "three": "^0.184.0",
+    "vue": "^3.5.35"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.0.16"
+  }
+}
