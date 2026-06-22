@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  basexor-boost:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: baseXOR_boost_container
+    hostname: basexor-boost
+    environment:
+      - POOL_NAME=baseXOR_POOL
+      - XOR_MODE=enabled
+      - AI_LLM_MODE=true
+      - NLP_ENABLED=true
+      - SNAPSHOT_INTERVAL=3600
+      - DATA_DIR=/data
+      - JMK_BASE=/jmbase
+    volumes:
+      - ./pools:/pools
+      - ./datasets:/datasets
+      - ./snapshots:/snapshots
+      - /var/run/docker.sock:/var/run/docker.sock
+    devices:
+      - /dev/nvidia0:/dev/nvidia0
+      - /dev/nvidia-uvm:/dev/nvidia-uvm
+      - /dev/nvidiactl:/dev/nvidiactl
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "8080:8080"
+      - "11434:11434"
+    networks:
+      - basexor-net
+    restart: unless-stopped
+
+  trueNAS:
+    image: trueNAS/scale:latest
+    container_name: baseXOR_truenas
+    hostname: truenas-server
+    environment:
+      - TrueNAS_MODE=containerized
+      - POOL_PATH=/pool
+    volumes:
+      - ./pools:/pool:rw
+    ports:
+      - "8081:80"
+      - "8443:443"
+    networks:
+      - basexor-net
+    restart: unless-stopped
+
+  kali-linux-ai:
+    image: kalilinux/kali-rolling:latest
+    container_name: baseXOR_kali_ai
+    hostname: kali-ai-agent
+    command: tail -f /dev/null
+    environment:
+      - LLM_POOL=dataset-kali_linux
+      - AGENT_MODE=true
+    volumes:
+      - ./agents:/agents
+      - ./datasets:/datasets
+    working_dir: /agents
+    networks:
+      - basexor-net
+    restart: unless-stopped
+
+networks:
+  basexor-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

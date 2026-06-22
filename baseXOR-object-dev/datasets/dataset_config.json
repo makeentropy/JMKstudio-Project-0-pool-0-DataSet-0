@@ -1,0 +1,39 @@
+{
+    "dataset_name": "dataset-kali_linux",
+    "ai_agent": {
+        "mode": "LLM",
+        "provider": "ollama",
+        "model": "llama2",
+        "nlp_enabled": true
+    },
+    "pool": {
+        "name": "baseXOR_POOL",
+        "path": "/pools",
+        "xor_enabled": true
+    },
+    "tactics_collection": {
+        "enabled": true,
+        "categories": [
+            "military_methods",
+            "military_law",
+            "ancient_rome_attack_methods",
+            "ancient_greek_military_tactics",
+            "flash_attack_methods",
+            "creeper_attack_tactics",
+            "trojan_horse_attack",
+            "dll_injection",
+            "quantum_singularity_steganography"
+        ]
+    },
+    "quantum": {
+        "singularity": {
+            "enabled": true,
+            "entropy_collection": "质能质奇点",
+            "memory_addressing": "quantum_matrix"
+        },
+        "steganography": {
+            "enabled": true,
+            "type": "quantum_entropy"
+        }
+    }
+}
