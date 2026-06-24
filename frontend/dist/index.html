@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaseXOR.jmk - 主题付费授权</title>
+  <script type="module" crossorigin src="/assets/index-Cx88rYbU.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Lph5W-KM.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">XOR</span>
+        <span class="logo-text">BaseXOR.jmk</span>
+      </div>
+      <p class="tagline">主题付费索引标签指令集</p>
+    </header>
+
+    <main class="main-content">
+      <div class="pay-card" id="payCard">
+        <div class="card-header">
+          <div class="card-badge">PREMIUM</div>
+          <h2 class="card-title">主题付费授权标签</h2>
+        </div>
+
+        <div class="card-price">
+          <span class="currency">¥</span>
+          <span class="amount" id="cardPrice">29.90</span>
+          <span class="period">/ 年</span>
+        </div>
+
+        <div class="card-desc">
+          购买后获取激活密钥，解锁全量主题标签权限
+        </div>
+
+        <ul class="feature-list">
+          <li><span class="check">✓</span> 全量主题标签访问</li>
+          <li><span class="check">✓</span> 免费 IP 代理转发</li>
+          <li><span class="check">✓</span> 资源上传管理</li>
+          <li><span class="check">✓</span> 365 天有效期</li>
+        </ul>
+
+        <button class="pay-btn" id="payBtn">立即购买</button>
+
+        <div class="divider">
+          <span>或使用卡密激活</span>
+        </div>
+
+        <div class="activate-section">
+          <input
+            type="text"
+            id="cardInput"
+            class="card-input"
+            placeholder="输入卡密激活标签"
+          />
+          <button class="active-btn" id="activeBtn">激活标签</button>
+        </div>
+
+        <div class="status-message" id="statusMsg"></div>
+      </div>
+
+      <div class="info-panel">
+        <h3>标签服务列表</h3>
+        <div class="tag-item">
+          <span class="tag-name">theme_premium</span>
+          <span class="tag-desc">付费主题全量权限</span>
+          <span class="tag-status paid">付费</span>
+        </div>
+        <div class="tag-item">
+          <span class="tag-name">free_proxy_forward</span>
+          <span class="tag-desc">免费 IP 转发服务</span>
+          <span class="tag-status free">免费</span>
+        </div>
+        <div class="tag-item">
+          <span class="tag-name">upload_admin</span>
+          <span class="tag-desc">资源上传管理后台</span>
+          <span class="tag-status admin">管理</span>
+        </div>
+
+        <div class="encryption-info">
+          <h4>加密方式</h4>
+          <p>BaseXOR 对称加密池</p>
+          <p class="repo">Repo: github.com/makeentropy/JMKstudio</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>BaseXOR.jmk v1.0.0 | JMKstudio solution</p>
+    </footer>
+  </div>
+
+</body>
+</html>

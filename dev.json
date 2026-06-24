@@ -1,0 +1,40 @@
+{
+  "name": "BaseXOR.jmk",
+  "version": "1.0.0",
+  "description": "BaseXOR symmetric encryption pool paid tag authentication system",
+  "repo": "github.com/makeentropy/JMKstudio",
+  "pool": "baseXOR_pool",
+  "index_tag": "theme_pay",
+  "services": {
+    "server_bin": {
+      "port": 3001,
+      "description": "Tag authentication and resource distribution service"
+    },
+    "shop_api_bin": {
+      "port": 3002,
+      "description": "Order, card key, and reconciliation API service"
+    }
+  },
+  "features": [
+    "Paid tag selling",
+    "Free IP proxy forwarding",
+    "Resource upload scheduling",
+    "XOR symmetric encryption"
+  ],
+  "api_token": "baseXOR_jmk_api_token_2026",
+  "card_sell_price": "29.90",
+  "proxy_target_ip": "127.0.0.1",
+  "backend_free_tag": "free_proxy_forward",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:shop\"",
+    "dev:server": "cd backend/server && npm run dev",
+    "dev:shop": "cd backend/shop && npm run dev",
+    "build": "npm run build:server && npm run build:shop && npm run build:frontend",
+    "build:server": "cd backend/server && npm run build",
+    "build:shop": "cd backend/shop && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "concurrently \"npm run start:server\" \"npm run start:shop\"",
+    "start:server": "cd backend/server && npm start",
+    "start:shop": "cd backend/shop && npm start"
+  }
+}
