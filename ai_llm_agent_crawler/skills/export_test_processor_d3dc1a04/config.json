@@ -1,0 +1,10 @@
+{
+  "schema_name": "export_test",
+  "schema_version": "1.0.0",
+  "fields": [
+    "id"
+  ],
+  "labels": [],
+  "data_type": "text",
+  "dataset_type": "training"
+}

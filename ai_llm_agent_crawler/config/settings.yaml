@@ -1,0 +1,94 @@
+# 应用配置
+app:
+  name: ai_llm_agent_crawler
+  version: 0.1.0
+  debug: false
+  environment: development
+
+# 日志配置
+logging:
+  level: INFO
+  format: "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+  file: logs/ai_llm_agent_crawler.log
+  rotation: 100 MB
+  retention: 30 days
+  compression: zip
+
+# 爬虫配置
+crawler:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  timeout: 30
+  max_retries: 3
+  delay: 1.0
+  concurrent_requests: 10
+  download_delay: 0.5
+  auto_throttle: true
+
+# 数据库配置
+database:
+  url: null
+  pool_size: 10
+  max_overflow: 20
+  pool_timeout: 30
+  echo: false
+
+# Redis配置
+redis:
+  url: redis://localhost:6379/0
+  max_connections: 50
+  socket_timeout: 5
+
+# MongoDB配置
+mongodb:
+  url: null
+  database: ai_crawler
+  max_pool_size: 100
+
+# Elasticsearch配置
+elasticsearch:
+  url: null
+  index_prefix: crawler
+
+# MinIO配置
+minio:
+  endpoint: null
+  access_key: null
+  secret_key: null
+  secure: false
+  bucket: ai-crawler
+
+# AWS S3配置
+aws:
+  access_key_id: null
+  secret_access_key: null
+  region: us-east-1
+  s3_bucket: null
+
+# 安全加密配置
+security:
+  encryption_key: null
+  encryption_algorithm: AES-256-GCM
+  hash_algorithm: SHA-256
+  password_salt: null
+
+# 数据集配置
+dataset:
+  output_dir: data/datasets
+  format: parquet
+  compression: snappy
+  chunk_size: 10000
+
+# 维度空间配置
+dimension:
+  max_dimensions: 1000
+  cache_size: 10000
+
+# 版本管理配置
+versioning:
+  storage_backend: local
+  max_versions: 100
+
+# 存储配置
+storage:
+  nas_path: null
+  max_size: null
