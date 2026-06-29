@@ -58,6 +58,16 @@ from ai_llm_agent_crawler.dimension.preprocessor import (
     FieldTransformer,
 )
 
+from ai_llm_agent_crawler.dimension.probe import (
+    DimensionProbeResult,
+    DimensionSpaceProbe,
+    DimensionTopology,
+    PathProbePoint,
+    PathProbeResult,
+    ProbeDimension,
+    ProbeReport,
+)
+
 __all__ = [
     # 数据模型
     "DimensionType",
@@ -100,4 +110,13 @@ __all__ = [
     "FieldTransformer",
     "DataValidator",
     "DataPipeline",
+
+    # 维度空间探针
+    "ProbeDimension",
+    "DimensionProbeResult",
+    "ProbeReport",
+    "DimensionSpaceProbe",
+    "PathProbePoint",
+    "PathProbeResult",
+    "DimensionTopology",
 ]
