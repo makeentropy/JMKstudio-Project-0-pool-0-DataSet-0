@@ -1,0 +1,22 @@
+{
+  "benchmark_name": "basic_test",
+  "model_name": "dummy_agent_v1",
+  "metrics": [
+    {
+      "metric_name": "exact_match",
+      "value": 0.0,
+      "metric_type": "accuracy",
+      "details": {
+        "correct": 0,
+        "total": 1
+      },
+      "timestamp": "2026-05-19T20:42:15.224815"
+    }
+  ],
+  "dataset_info": {
+    "num_examples": 1
+  },
+  "duration_seconds": 0.000198,
+  "metadata": {},
+  "timestamp": "2026-05-19T20:42:15.224822"
+}

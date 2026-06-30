@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-19T20:37:42.535928",
+  "split_info": {
+    "train_count": 3,
+    "val_count": 1,
+    "test_count": 1,
+    "total_count": 5,
+    "train_ratio": 0.6,
+    "val_ratio": 0.2,
+    "test_ratio": 0.2
+  },
+  "export_paths": {
+    "train": "/workspace/data/final/dataset_20260519_203742/train/train.jsonl",
+    "val": "/workspace/data/final/dataset_20260519_203742/val/val.jsonl",
+    "test": "/workspace/data/final/dataset_20260519_203742/test/test.jsonl"
+  },
+  "enable_augmentation": false
+}

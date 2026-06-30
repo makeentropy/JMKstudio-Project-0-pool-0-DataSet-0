@@ -1,0 +1,17 @@
+{
+  "dataset_id": "annotated_20260519_204654",
+  "name": "batch_20260519_203248",
+  "description": null,
+  "source": "annotated",
+  "created_at": "2026-05-19T20:46:54.042078",
+  "updated_at": "2026-05-19T20:46:54.042090",
+  "data_count": 5,
+  "file_size": 5225,
+  "file_path": "/workspace/data/annotated/batch_20260519_203248.jsonl",
+  "tags": [
+    "annotated"
+  ],
+  "version": "1.0.0",
+  "checksum": "f83a8b10bf5f39f7dc991db1f343b09a2706b827920f2656217d9ecdc3fa83d5",
+  "custom_fields": {}
+}
