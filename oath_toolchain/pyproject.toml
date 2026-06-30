@@ -1,0 +1,156 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oath-toolchain"
+version = "1.0.0"
+description = "神誓工具链 - 功能强大的密码学与安全工具链，提供从底层密码原语到高层业务编排的完整解决方案"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Oath Toolchain Team", email = "team@oathtoolchain.dev" }
+]
+maintainers = [
+    { name = "JMKstudio", email = "admin@jmkstudio.dev" }
+]
+keywords = [
+    "cryptography",
+    "security",
+    "encryption",
+    "steganography",
+    "certificate",
+    "pki",
+    "zero-knowledge",
+    "toolchain",
+    "oath",
+    "karmaca",
+    "geometric-proof",
+    "nlp-keygen",
+    "singularity",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "cryptography>=41.0.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "numpy>=1.24.0",
+    "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+oath = "oath_toolchain.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/oath-toolchain/oath-toolchain"
+Documentation = "https://oath-toolchain.readthedocs.io"
+Repository = "https://github.com/oath-toolchain/oath-toolchain.git"
+Issues = "https://github.com/oath-toolchain/oath-toolchain/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --strict-markers --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "performance: marks tests as performance tests",
+    "security: marks tests as security tests",
+    "unit: marks tests as unit tests",
+    "crypto: marks tests as cryptography related",
+    "steganography: marks tests as steganography related",
+    "certificate: marks tests as certificate/CA related",
+    "dataset: marks tests as dataset related",
+    "sdk: marks tests as SDK related",
+    "cli: marks tests as CLI related",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+    "error::UserWarning",
+]
+
+[tool.coverage.run]
+source = ["oath_toolchain"]
+branch = true
+omit = [
+    "tests/*",
+    "*/__init__.py",
+    "*/tests/*",
+]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 85
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+    "pass",
+    "\\.\\.\\.",
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
