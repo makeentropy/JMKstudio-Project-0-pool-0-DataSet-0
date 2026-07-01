@@ -62,6 +62,21 @@ from ai_llm_agent_crawler.crawler.scheduler import (
     TaskScheduler,
     TaskStatus,
 )
+from ai_llm_agent_crawler.crawler.android_crawler import (
+    DeviceStatus,
+    HookStatus,
+    AppState,
+    CrawlDataType,
+    VirtualDeviceConfig,
+    EdXposedHookConfig,
+    AppCrawlConfig,
+    CrawlResult,
+    VirtualAndroidManager,
+    EdXposedHookManager,
+    BaseAppCrawler,
+    WeChatCrawler,
+    AndroidCrawlerOrchestrator,
+)
 
 __all__ = [
     # Base classes
@@ -113,4 +128,18 @@ __all__ = [
     "TaskResult",
     "TaskScheduler",
     "TaskStatus",
+    # Android Crawler (Virtual Android + EdXposed)
+    "DeviceStatus",
+    "HookStatus",
+    "AppState",
+    "CrawlDataType",
+    "VirtualDeviceConfig",
+    "EdXposedHookConfig",
+    "AppCrawlConfig",
+    "CrawlResult",
+    "VirtualAndroidManager",
+    "EdXposedHookManager",
+    "BaseAppCrawler",
+    "WeChatCrawler",
+    "AndroidCrawlerOrchestrator",
 ]

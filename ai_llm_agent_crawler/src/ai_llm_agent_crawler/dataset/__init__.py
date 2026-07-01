@@ -88,6 +88,36 @@ from ai_llm_agent_crawler.dataset.metadata_manager import (
     MetadataManager,
     DatasetLifecycleManager,
 )
+from ai_llm_agent_crawler.dataset.liangyi_generator import (
+    LiangYiMode,
+    LiangYiStatus,
+    YinYangPair,
+    GenerationResult,
+    LiangYiConfig,
+    YangGenerator,
+    YinGenerator,
+    QualityAssessor,
+    LiangYiEngine,
+)
+from ai_llm_agent_crawler.dataset.dataset_pool import (
+    DatasetPoolLevel,
+    DatasetPoolStatus,
+    PoolDatasetInfo,
+    DatasetPoolConfig,
+    ModelDatasetPool,
+)
+from ai_llm_agent_crawler.dataset.datasci_talk import (
+    ChatRole,
+    QueryType,
+    ChatMessage,
+    ChatContext,
+    DataSciTalkConfig,
+    QueryIntent,
+    QueryResult,
+    IntentRecognizer,
+    DataQueryEngine,
+    DataSciTalkAgent,
+)
 
 __all__ = [
     # 原有导出
@@ -165,4 +195,31 @@ __all__ = [
     "MetadataStore",
     "MetadataManager",
     "DatasetLifecycleManager",
+    # LiangYi Generator
+    "LiangYiMode",
+    "LiangYiStatus",
+    "YinYangPair",
+    "GenerationResult",
+    "LiangYiConfig",
+    "YangGenerator",
+    "YinGenerator",
+    "QualityAssessor",
+    "LiangYiEngine",
+    # Dataset Pool
+    "DatasetPoolLevel",
+    "DatasetPoolStatus",
+    "PoolDatasetInfo",
+    "DatasetPoolConfig",
+    "ModelDatasetPool",
+    # DataSciTalk
+    "ChatRole",
+    "QueryType",
+    "ChatMessage",
+    "ChatContext",
+    "DataSciTalkConfig",
+    "QueryIntent",
+    "QueryResult",
+    "IntentRecognizer",
+    "DataQueryEngine",
+    "DataSciTalkAgent",
 ]
