@@ -65,6 +65,21 @@ from ai_llm_agent_crawler.security.access_control import (
     AccessController,
 )
 
+# 维度空间噪音字典 + XOR 时钟级校验编解码 + 区块链编码 CA 数据容器
+from ai_llm_agent_crawler.security.noise_dictionary import (
+    NoiseDictionary,
+    build_noise_dictionary,
+)
+from ai_llm_agent_crawler.security.xor_clock_codec import (
+    XorClockPayload,
+    XorClockCodec,
+)
+from ai_llm_agent_crawler.security.blockchain_encoding import (
+    ChainRecord,
+    BlockchainEncodingContainer,
+    merge_chains,
+)
+
 __all__ = [
     # 基础加密
     "AESCipher",
@@ -115,4 +130,12 @@ __all__ = [
     "RoleManager",
     "ResourceManager",
     "AccessController",
+    # 维度空间噪音字典 + XOR 时钟 + 区块链编码
+    "NoiseDictionary",
+    "build_noise_dictionary",
+    "XorClockPayload",
+    "XorClockCodec",
+    "ChainRecord",
+    "BlockchainEncodingContainer",
+    "merge_chains",
 ]

@@ -59,6 +59,11 @@ dependencies = [
     "tenacity>=8.2.0",
     "click>=8.1.0",
     "rich>=13.7.0",
+    # H5 内嵌 Jupyter IDE
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    # llama.cpp 引擎绑定（可选，懒加载；未安装时使用 stub）
+    "llama-cpp-python>=0.2.50; platform_system != 'Windows' or python_version < '3.13'",
 ]
 
 [project.optional-dependencies]
@@ -99,7 +104,7 @@ Issues = "https://github.com/yourusername/ai_llm_agent_crawler/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-ai_llm_agent_crawler = ["py.typed"]
+ai_llm_agent_crawler = ["py.typed", "ide/static/*"]
 
 [tool.black]
 line-length = 100

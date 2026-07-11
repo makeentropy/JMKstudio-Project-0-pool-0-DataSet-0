@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-embed="false">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trae H5 Embedded Jupyter IDE</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div id="app" class="ide-app">
+  <!-- ============ 顶部栏 ============ -->
+  <header class="ide-topbar">
+    <div class="ide-brand">
+      <span class="ide-logo">◆</span>
+      <span class="ide-title">Trae H5 Embedded Jupyter IDE</span>
+      <span class="ide-badge" id="embed-badge">preview</span>
+    </div>
+    <div class="ide-actions">
+      <button id="btn-add-code" class="btn">+ Code</button>
+      <button id="btn-add-md" class="btn">+ Markdown</button>
+      <button id="btn-run-all" class="btn btn-primary">Run All</button>
+      <button id="btn-reset" class="btn btn-warn">Reset</button>
+      <span id="status-dot" class="dot dot-ok" title="connected"></span>
+    </div>
+  </header>
+
+  <!-- ============ 主体 ============ -->
+  <div class="ide-body">
+    <!-- 侧边面板 -->
+    <aside class="ide-sidebar">
+      <nav class="tab-tabs">
+        <button class="tab active" data-tab="notebook">Notebook</button>
+        <button class="tab" data-tab="llm">LLM</button>
+        <button class="tab" data-tab="security">Security</button>
+        <button class="tab" data-tab="skills">Skills</button>
+        <button class="tab" data-tab="tools">Tools</button>
+      </nav>
+      <div class="tab-panels">
+        <section class="tab-panel active" data-panel="notebook">
+          <p class="hint">单元格管理与执行。点击 + Code / + Markdown 新增。</p>
+          <div id="nb-meta" class="meta"></div>
+        </section>
+        <section class="tab-panel" data-panel="llm">
+          <h4>llama.cpp / JS agent</h4>
+          <div id="llm-health" class="health-card"></div>
+          <h5>Chat</h5>
+          <textarea id="llm-input" placeholder="输入对话内容..."></textarea>
+          <button id="btn-llm-chat" class="btn btn-primary">发送</button>
+          <button id="btn-llm-health" class="btn">刷新状态</button>
+          <pre id="llm-output" class="output"></pre>
+          <h5>Full Agent 审计</h5>
+          <input id="audit-target" placeholder="target (如 dataset.csv)" />
+          <textarea id="audit-content" placeholder="待审计内容..."></textarea>
+          <button id="btn-audit" class="btn">审计审查</button>
+          <button id="btn-iterate" class="btn">省效率迭代</button>
+          <input id="iter-baseline" type="number" value="100" placeholder="基线 ms" />
+          <pre id="agent-output" class="output"></pre>
+        </section>
+        <section class="tab-panel" data-panel="security">
+          <h4>XOR 时钟级校验</h4>
+          <input id="xor-plain" placeholder="明文" value="hello-trae" />
+          <input id="xor-dim" placeholder="dimension" value="dim-1" />
+          <input id="xor-seed" type="number" placeholder="clock_seed" value="42" />
+          <button id="btn-xor-encode" class="btn">编码</button>
+          <button id="btn-xor-decode" class="btn">解码</button>
+          <pre id="xor-output" class="output"></pre>
+          <h4>区块链编码 CA 容器</h4>
+          <input id="mine-entry" placeholder="字典条目" value="llama-dict-001" />
+          <input id="mine-ca" placeholder="CA 序列号" value="CA-0001" />
+          <input id="mine-cipher" placeholder="密文 hex" value="aabbcc" />
+          <button id="btn-mine" class="btn">挖出编码钱包</button>
+          <button id="btn-chain" class="btn">查看链</button>
+          <button id="btn-verify" class="btn">校验链</button>
+          <pre id="chain-output" class="output"></pre>
+        </section>
+        <section class="tab-panel" data-panel="skills">
+          <h4>Skills / Dataset 集赞积攒</h4>
+          <input id="skill-name" placeholder="skill 名称" />
+          <input id="skill-desc" placeholder="描述" />
+          <input id="skill-tags" placeholder="标签(逗号分隔)" />
+          <button id="btn-skill-add" class="btn">登记 skill</button>
+          <button id="btn-settle" class="btn btn-primary">清算 POOL</button>
+          <button id="btn-skills-refresh" class="btn">刷新</button>
+          <pre id="skills-output" class="output"></pre>
+        </section>
+        <section class="tab-panel" data-panel="tools">
+          <h4>跑步追踪</h4>
+          <input id="run-dist" type="number" placeholder="距离 km" value="5" />
+          <input id="run-dur" type="number" placeholder="时长 s" value="1800" />
+          <input id="run-hr" type="number" placeholder="平均心率" value="150" />
+          <button id="btn-run-add" class="btn">记录</button>
+          <button id="btn-run-get" class="btn">查看</button>
+          <h4>预算工具</h4>
+          <input id="bud-amount" type="number" placeholder="金额" value="50" />
+          <input id="bud-cat" placeholder="分类" value="food" />
+          <select id="bud-kind"><option value="expense">expense</option><option value="income">income</option></select>
+          <button id="btn-bud-add" class="btn">记账</button>
+          <button id="btn-bud-get" class="btn">查看</button>
+          <h4>生物科学数据集</h4>
+          <input id="bio-n" type="number" placeholder="样本数" value="10" />
+          <button id="btn-bio" class="btn btn-primary">生成</button>
+          <pre id="tools-output" class="output"></pre>
+        </section>
+      </div>
+    </aside>
+
+    <!-- notebook 编辑区 -->
+    <main class="ide-main">
+      <div id="cells" class="cells"></div>
+    </main>
+  </div>
+
+  <footer class="ide-footer">
+    <span id="footer-status">ready</span>
+    <span class="sep">·</span>
+    <span id="footer-info"></span>
+  </footer>
+</div>
+
+<!-- 内置 JS agent（运行于浏览器侧，调用后端 API） -->
+<script src="/static/app.js"></script>
+</body>
+</html>
