@@ -1,0 +1,391 @@
+{
+  "dataset_meta": {
+    "name": "skills_dataset_full",
+    "version": "1.0.0",
+    "description": "整合三个豆包线程内容的完整技能数据集：九宫波函数因果推演、量子战舰LLM数据集池生成、道教论坛开源资源算法库",
+    "dataset_type": "training",
+    "data_type": "multimodal",
+    "quality": "medium",
+    "created_at": "2026-07-11T23:50:00",
+    "tags": ["skills", "llm-dataset", "wave-function", "causal", "taoism", "quantum", "python", "lua"],
+    "source": "doubao_threads",
+    "total_records": 12,
+    "categories": [
+      "九宫波函数因果推演",
+      "量子战舰物理仿真",
+      "LLM数据集池生成",
+      "道教论坛架构方案",
+      "Python算法库",
+      "Lua轻量算法",
+      "开源资源汇总"
+    ]
+  },
+  "skills": [
+    {
+      "id": "SKILL-001",
+      "name": "九宫波函数振幅矩阵生成",
+      "category": "九宫波函数因果推演",
+      "description": "基于洛书九宫拓扑结构，生成3x3波函数振幅矩阵（图幅），支持相幅、弦幅、图幅三层幅值表征",
+      "source_thread": "九宫波函数幅文矩阵矩方比",
+      "source_url": "https://www.doubao.com/thread/xa2be102ba15581b8b08e712036cea649",
+      "language": "Python",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "init_amp_range", "type": "tuple", "description": "初始振幅范围", "default": "(0.2, 1.0)"},
+        {"name": "time_steps", "type": "int", "description": "时间步数", "default": 20},
+        {"name": "gamma", "type": "float", "description": "耗散系数", "default": 0.05}
+      ],
+      "outputs": [
+        {"name": "phase_amp_pairs", "type": "list", "description": "相幅二元组列表"},
+        {"name": "string_amp", "type": "list", "description": "弦幅一维序列"},
+        {"name": "figure_amp_matrix", "type": "ndarray", "description": "图幅3x3幅值矩阵"},
+        {"name": "R_matrix", "type": "ndarray", "description": "矩方比耦合矩阵"}
+      ],
+      "code_snippet": "import numpy as np\npos_order = [9,1,3, 7,5,4, 6,8,2]\nA_init = np.random.uniform(0.2, 1.0, size=9)\nphi_init = np.random.uniform(0, 2*np.pi, size=9)\ndef wave_amp_phase(A0, phi0, t, gamma):\n    A_t = A0 * np.exp(-gamma * t)\n    phi_t = phi0 + 0.2 * t\n    psi = A_t * np.exp(1j * phi_t)\n    return A_t, phi_t, psi\nfig_amp_matrix = A_init.reshape(3,3)",
+      "tags": ["波函数", "九宫矩阵", "相幅", "弦幅", "图幅", "矩方比"],
+      "usage_scenario": "因果波场仿真、九宫拓扑推演、可视化绘图"
+    },
+    {
+      "id": "SKILL-002",
+      "name": "大因果历史时序推演引擎",
+      "category": "九宫波函数因果推演",
+      "description": "统一封装洛书九宫、后天八卦、金口诀三套术数底层数学模型，耦合历史时序大因果推演引擎",
+      "source_thread": "九宫波函数幅文矩阵矩方比",
+      "source_url": "https://www.doubao.com/thread/xa2be102ba15581b8b08e712036cea649",
+      "language": "Python",
+      "difficulty": "advanced",
+      "inputs": [
+        {"name": "total_time", "type": "int", "description": "历史总时间步", "default": 30},
+        {"name": "beta", "type": "float", "description": "时间衰减系数", "default": 0.04}
+      ],
+      "outputs": [
+        {"name": "history_dataframe", "type": "DataFrame", "description": "历史时序数据集"},
+        {"name": "couple_matrix", "type": "ndarray", "description": "全域矩方比因果耦合矩阵"},
+        {"name": "visualization_path", "type": "str", "description": "可视化图像保存路径"}
+      ],
+      "code_snippet": "class ChronoCausalEngine:\n    def __init__(self):\n        self.jg = JiuGongCalc()\n        self.bg = BaGuaCalc()\n        self.jkj = JinKouJueCalc()\n    def time_propagate(self, total_time=30):\n        for t in range(total_time):\n            A_t,phi_t,psi_t = [],[],[]\n            for i in range(9):\n                a,p,psi = WaveBase.single_wave(self.jg.A_init[i], self.jg.phi_init[i], t)\n                A_t.append(a); phi_t.append(p); psi_t.append(psi)\n            self.history_data.append({'time_step':t, 'nine_grid_amp':A_t})",
+      "tags": ["大因果", "历史推演", "九宫", "八卦", "金口诀", "波函数"],
+      "usage_scenario": "历史事件因果分析、时序波场仿真、术数量化计算"
+    },
+    {
+      "id": "SKILL-003",
+      "name": "LLM-Full Agent工程架构生成",
+      "category": "九宫波函数因果推演",
+      "description": "基于Seed基座+自定义Dataset的全技能智能体工程架构，模块化Skill插件注册机制",
+      "source_thread": "九宫波函数幅文矩阵矩方比",
+      "source_url": "https://www.doubao.com/thread/xa2be102ba15581b8b08e712036cea649",
+      "language": "Python",
+      "difficulty": "advanced",
+      "inputs": [
+        {"name": "cfg_path", "type": "str", "description": "配置文件路径"},
+        {"name": "user_query", "type": "str", "description": "用户任务输入"}
+      ],
+      "outputs": [
+        {"name": "task_results", "type": "dict", "description": "各子任务执行结果"},
+        {"name": "final_md", "type": "str", "description": "最终Markdown报告"}
+      ],
+      "code_snippet": "class FullCausalAgent:\n    def __init__(self, cfg_path:str):\n        self.planner = TaskPlanner()\n        self.executor = ToolExecutor()\n        self.memory = AgentMemory()\n        self.seed_model = SeedInfer(cfg_path)\n    def run_task(self, user_query:str):\n        sub_tasks = self.planner.decompose(user_query, self.seed_model)\n        for task in sub_tasks:\n            res = self.executor.run(task, self.seed_model)\n            self.memory.append(task, res)\n        return self.seed_model.generate_final_report(self.memory.dump())",
+      "tags": ["LLM Agent", "Seed基座", "技能工程", "工具调用", "自省修正"],
+      "usage_scenario": "智能体开发、自动化任务执行、多工具编排"
+    },
+    {
+      "id": "SKILL-004",
+      "name": "Markdown内嵌CSV数据集提取",
+      "category": "九宫波函数因果推演",
+      "description": "从Markdown文档中自动提取多块内嵌CSV代码块，转换为Pandas DataFrame字典",
+      "source_thread": "九宫波函数幅文矩阵矩方比",
+      "source_url": "https://www.doubao.com/thread/xa2be102ba15581b8b08e712036cea649",
+      "language": "Python",
+      "difficulty": "beginner",
+      "inputs": [
+        {"name": "md_text", "type": "str", "description": "Markdown文本内容"}
+      ],
+      "outputs": [
+        {"name": "dataset_dict", "type": "dict", "description": "{数据集名称: DataFrame}字典"}
+      ],
+      "code_snippet": "import re\nimport pandas as pd\nfrom io import StringIO\ndef extract_all_csv_from_md(md_text: str) -> dict:\n    pattern = r\"```csv\\n([\\s\\S]*?)\\n```\"\n    csv_blocks = re.findall(pattern, md_text)\n    dataset_dict = {}\n    name_list = [\"nine_grid_wave\",\"bagua_hexagram\",\"jinkoujue_four\",\"matrix_ratio_couple\"]\n    for idx, raw in enumerate(csv_blocks):\n        df = pd.read_csv(StringIO(raw))\n        key = name_list[idx] if idx < len(name_list) else f\"dataset_{idx}\"\n        dataset_dict[key] = df\n    return dataset_dict",
+      "tags": ["Markdown", "CSV", "数据提取", "正则表达式", "Pandas"],
+      "usage_scenario": "文档型数据集解析、LLM训练数据准备、单文件数据交付"
+    },
+    {
+      "id": "SKILL-005",
+      "name": "量子声波波函数建模",
+      "category": "量子战舰物理仿真",
+      "description": "融合经典波动方程与量子相位的声波波函数量子化建模",
+      "source_thread": "合并项目工程",
+      "source_url": "https://www.doubao.com/thread/xe83b1eb8bea3863da4e7b24496b0d80a",
+      "language": "Python",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "x", "type": "np.ndarray", "description": "空间坐标数组"},
+        {"name": "t", "type": "float", "description": "时间值"},
+        {"name": "amplitude", "type": "float", "description": "振幅", "default": 1.0},
+        {"name": "frequency", "type": "float", "description": "频率", "default": 5.0},
+        {"name": "quantum_phase", "type": "float", "description": "量子相位", "default": 0.0}
+      ],
+      "outputs": [
+        {"name": "wave_function", "type": "np.ndarray", "description": "波函数值数组"}
+      ],
+      "code_snippet": "import numpy as np\nfrom scipy.constants import pi\ndef quantum_acoustic_wave(x: np.ndarray, t: float, amplitude: float = 1.0, frequency: float = 5.0, quantum_phase: float = 0.0) -> np.ndarray:\n    k = 2 * pi\n    omega = 2 * pi * frequency\n    wave_function = amplitude * np.sin(k * x - omega * t + quantum_phase)\n    return wave_function",
+      "tags": ["量子声学", "波函数", "波动方程", "量子相位"],
+      "usage_scenario": "物理仿真、声波传播计算、量子耦合模拟"
+    },
+    {
+      "id": "SKILL-006",
+      "name": "量子奇点空间战舰引擎",
+      "category": "量子战舰物理仿真",
+      "description": "基于量子奇点时空曲率的空间战舰引擎与跃迁逻辑",
+      "source_thread": "合并项目工程",
+      "source_url": "https://www.doubao.com/thread/xe83b1eb8bea3863da4e7b24496b0d80a",
+      "language": "Python",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "mass", "type": "float", "description": "奇点质量", "default": 1e12},
+        {"name": "singularity_radius", "type": "float", "description": "奇点视界半径", "default": 0.1},
+        {"name": "jump_vector", "type": "np.ndarray", "description": "跃迁坐标向量"}
+      ],
+      "outputs": [
+        {"name": "spacetime_curvature", "type": "float", "description": "时空曲率值"},
+        {"name": "new_position", "type": "np.ndarray", "description": "跃迁后新坐标"}
+      ],
+      "code_snippet": "class QuantumSingularity:\n    def __init__(self, mass: float = 1e12, singularity_radius: float = 0.1):\n        self.mass = mass\n        self.radius = singularity_radius\n        G = 6.67430e-11\n        self.spacetime_curvature = (G * self.mass) / (self.radius ** 2)\n    def coupling_wave(self, wave_func: np.ndarray) -> np.ndarray:\n        return wave_func * self.spacetime_curvature\n\nclass FutureSpaceBattleship:\n    def space_jump(self, jump_vector: np.ndarray) -> None:\n        decay = 1 / self.singularity_engine.spacetime_curvature\n        self.position += jump_vector * decay",
+      "tags": ["量子奇点", "时空曲率", "空间跃迁", "空间战舰"],
+      "usage_scenario": "空间物理仿真、科幻场景模拟、波场耦合计算"
+    },
+    {
+      "id": "SKILL-007",
+      "name": "LLM数据集池生成与管理",
+      "category": "LLM数据集池生成",
+      "description": "LLM自动化数据集池生成、标准化、持久化存储与读取，基于Pydantic数据模型",
+      "source_thread": "合并项目工程",
+      "source_url": "https://www.doubao.com/thread/xe83b1eb8bea3863da4e7b24496b0d80a",
+      "language": "Python",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "pool_path", "type": "str", "description": "数据集池文件路径", "default": "llm_dataset_pool.json"},
+        {"name": "wave_func", "type": "np.ndarray", "description": "波函数数据"},
+        {"name": "singularity", "type": "QuantumSingularity", "description": "量子奇点对象"},
+        {"name": "battleship", "type": "FutureSpaceBattleship", "description": "战舰对象"},
+        {"name": "jump_status", "type": "bool", "description": "跃迁状态"}
+      ],
+      "outputs": [
+        {"name": "dataset_pool", "type": "List[Dict]", "description": "完整数据集池列表"},
+        {"name": "pool_size", "type": "int", "description": "数据池中记录数量"}
+      ],
+      "code_snippet": "import json\nfrom pathlib import Path\nfrom pydantic import BaseModel\nfrom typing import List, Dict\n\nclass QuantumDataset(BaseModel):\n    timestamp: float\n    wave_function: List[float]\n    singularity_curvature: float\n    battleship_position: List[float]\n    jump_status: bool\n\nclass LLMDataSetPool:\n    def __init__(self, pool_path: str = \"llm_dataset_pool.json\"):\n        self.pool_path = Path(pool_path)\n        self.dataset_pool: List[Dict] = self._load_existing_pool()\n    def generate_dataset(self, wave_func, singularity, battleship, jump_status):\n        data = QuantumDataset(\n            timestamp=np.round(np.random.random(), 4),\n            wave_function=wave_func.tolist(),\n            singularity_curvature=singularity.spacetime_curvature,\n            battleship_position=battleship.position.tolist(),\n            jump_status=jump_status\n        )\n        self.dataset_pool.append(data.model_dump())\n    def save_pool(self):\n        with open(self.pool_path, \"w\", encoding=\"utf-8\") as f:\n            json.dump(self.dataset_pool, f, ensure_ascii=False, indent=2)",
+      "tags": ["LLM数据集", "数据池", "Pydantic", "JSON持久化", "训练数据"],
+      "usage_scenario": "LLM训练数据生成、数据集管理、物理仿真数据存储"
+    },
+    {
+      "id": "SKILL-008",
+      "name": "道教论坛整体电讯工程架构",
+      "category": "道教论坛架构方案",
+      "description": "道教主题网络论坛七大模块分层架构设计，兼容Python/Lua双语言算法库接入",
+      "source_thread": "道教论坛开源资源汇总",
+      "source_url": "https://www.doubao.com/thread/x6f20632f9efe84458dd7201253471609",
+      "language": "架构设计",
+      "difficulty": "advanced",
+      "inputs": [
+        {"name": "deployment_scale", "type": "str", "description": "部署规模: small/medium/large", "default": "medium"}
+      ],
+      "outputs": [
+        {"name": "architecture_diagram", "type": "dict", "description": "分层架构描述"},
+        {"name": "component_list", "type": "list", "description": "核心组件清单"},
+        {"name": "tech_stack", "type": "dict", "description": "技术栈选型"}
+      ],
+      "architecture_layers": [
+        "硬件电讯底层",
+        "网络通信层",
+        "后端微服务层",
+        "业务应用层",
+        "前端展示层",
+        "算法支撑库层",
+        "安全运维层"
+      ],
+      "tags": ["系统架构", "电讯工程", "微服务", "前后端分离", "双语言算法"],
+      "usage_scenario": "传统文化论坛搭建、宗教类网站架构设计、全栈项目规划"
+    },
+    {
+      "id": "SKILL-009",
+      "name": "Python古籍NLP算法库集成",
+      "category": "Python算法库",
+      "description": "道教经文分词断句、繁简转换、古籍OCR、语义向量检索全套Python算法集成方案",
+      "source_thread": "道教论坛开源资源汇总",
+      "source_url": "https://www.doubao.com/thread/x6f20632f9efe84458dd7201253471609",
+      "language": "Python",
+      "difficulty": "advanced",
+      "inputs": [
+        {"name": "text", "type": "str", "description": "古籍文本内容"},
+        {"name": "task_type", "type": "str", "description": "任务类型: tokenize/convert/ocr/search", "default": "tokenize"}
+      ],
+      "outputs": [
+        {"name": "result", "type": "str", "description": "处理结果文本"},
+        {"name": "tokens", "type": "list", "description": "分词结果列表"}
+      ],
+      "core_libraries": [
+        {"name": "Jiayan", "purpose": "古汉语NLP分词断句", "license": "MIT"},
+        {"name": "OpenCC", "purpose": "繁简异体字转换", "license": "Apache2.0"},
+        {"name": "PaddleOCR", "purpose": "竖排古籍OCR识别", "license": "Apache2.0"},
+        {"name": "FAISS", "purpose": "向量检索相似度匹配", "license": "MIT"},
+        {"name": "QingChat-1.5B", "purpose": "国学垂类大模型释义", "license": "开源"}
+      ],
+      "tags": ["古籍NLP", "文言文处理", "OCR", "向量检索", "道教经文"],
+      "usage_scenario": "道藏经文库建设、古籍数字化、经文检索系统"
+    },
+    {
+      "id": "SKILL-010",
+      "name": "Lua网关轻量算法库",
+      "category": "Lua轻量算法",
+      "description": "Nginx/OpenResty网关内置Lua脚本，实现毫秒级敏感词过滤、限流防刷、黄历干支计算",
+      "source_thread": "道教论坛开源资源汇总",
+      "source_url": "https://www.doubao.com/thread/x6f20632f9efe84458dd7201253471609",
+      "language": "Lua",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "request_data", "type": "table", "description": "请求数据"},
+        {"name": "rule_type", "type": "str", "description": "规则类型: waf/limit/lunar/yi", "default": "waf"}
+      ],
+      "outputs": [
+        {"name": "passed", "type": "bool", "description": "是否通过校验"},
+        {"name": "block_reason", "type": "str", "description": "拦截原因（如被拦截）"}
+      ],
+      "core_libraries": [
+        {"name": "lua-resty-waf", "purpose": "Web防火墙敏感词拦截", "license": "BSD"},
+        {"name": "lua-resty-limit-traffic", "purpose": "流量限流防刷", "license": "BSD"},
+        {"name": "lunar-lua", "purpose": "农历干支吉日计算", "license": "MIT"},
+        {"name": "lua-resty-redis", "purpose": "Redis缓存热度计算", "license": "BSD"}
+      ],
+      "tags": ["Lua", "OpenResty", "网关", "WAF", "限流", "黄历"],
+      "usage_scenario": "API网关风控、实时内容过滤、高并发轻量计算"
+    },
+    {
+      "id": "SKILL-011",
+      "name": "双语言算法调度网关",
+      "category": "道教论坛架构方案",
+      "description": "Apache APISIX统一调度Python+Lua混合算法集群，轻量规则本地执行，重型AI任务转发",
+      "source_thread": "道教论坛开源资源汇总",
+      "source_url": "https://www.doubao.com/thread/x6f20632f9efe84458dd7201253471609",
+      "language": "混合(Lua/Python)",
+      "difficulty": "advanced",
+      "inputs": [
+        {"name": "task_type", "type": "str", "description": "任务类型: light/heavy"},
+        {"name": "payload", "type": "dict", "description": "任务载荷数据"}
+      ],
+      "outputs": [
+        {"name": "result", "type": "dict", "description": "算法执行结果"},
+        {"name": "execution_time_ms", "type": "float", "description": "执行耗时毫秒"}
+      ],
+      "dispatch_rules": [
+        "Lua本地: 关键词过滤、黄历计算、限流判断、热度计算",
+        "Python转发: 古籍NLP、OCR识别、语义检索、内容风控、推荐算法"
+      ],
+      "tags": ["算法调度", "APISIX", "混合语言", "网关", "gRPC"],
+      "usage_scenario": "双语言算法集群管理、任务智能分流、微服务网关"
+    },
+    {
+      "id": "SKILL-012",
+      "name": "道教论坛规则数据集生成",
+      "category": "开源资源汇总",
+      "description": "生成内嵌Markdown的CSV规则数据集，涵盖电讯组网、安全风控、经文处理、算法调度等15+规则",
+      "source_thread": "道教论坛开源资源汇总",
+      "source_url": "https://www.doubao.com/thread/x6f20632f9efe84458dd7201253471609",
+      "language": "CSV/Markdown",
+      "difficulty": "intermediate",
+      "inputs": [
+        {"name": "categories", "type": "list", "description": "要包含的规则分类", "default": ["all"]},
+        {"name": "output_format", "type": "str", "description": "输出格式: csv/markdown/json", "default": "csv"}
+      ],
+      "outputs": [
+        {"name": "dataset_file", "type": "str", "description": "数据集文件路径"},
+        {"name": "rule_count", "type": "int", "description": "规则条目数量"}
+      ],
+      "csv_fields": [
+        "category",
+        "rule_id",
+        "rule_name",
+        "rule_content_markdown",
+        "language",
+        "open_source_address",
+        "usage_scenario"
+      ],
+      "rule_categories": [
+        "电讯底层组网",
+        "流量安全风控",
+        "经文处理算法",
+        "图像识别算法",
+        "历法术数轻量计算",
+        "算法调度网关",
+        "智能推荐规则",
+        "语义检索规则",
+        "多角色权限规则"
+      ],
+      "tags": ["规则库", "CSV", "Markdown", "数据集", "论坛规则"],
+      "usage_scenario": "项目规则文档化、知识库构建、算法规则管理"
+    }
+  ],
+  "data_samples": {
+    "nine_grid_wave_csv_sample": "time_step,palace_id,amplitude,phase,real_psi,imag_psi,causal_label\n0,9,0.7491,3.1116,0.7478,-0.0442,农科研发\n0,1,0.9014,4.0087,-0.5942,-0.6751,国防粮食储备\n0,3,0.6407,0.7384,0.4690,0.4358,事业晋升\n0,7,0.7566,0.8541,0.4955,0.5714,消防应急\n0,5,0.5858,1.9731,-0.2263,0.5405,全局国运\n0,4,0.8085,3.0302,-0.8006,0.1125,商贸流通\n0,6,0.5950,4.9417,0.1692,-0.5705,国防军工\n0,8,0.6832,1.0720,0.3295,0.5985,人防囤储\n0,2,0.7722,2.2199,-0.4372,0.6413,屯膏聚财",
+    "bagua_energy_csv_sample": "gua_name,upper_trigram,lower_trigram,wave_amp,phase,causal_label\n乾,乾,乾,0.9221,0.2115,国防军工\n兑,兑,兑,0.8543,0.4228,消防应急\n离,离,离,0.8812,0.6341,农科研发\n震,震,震,0.7932,0.8454,事业晋升\n泰,乾,坤,0.8762,1.9019,全局国运",
+    "llm_dataset_pool_sample": [
+      {
+        "timestamp": 0.4231,
+        "wave_function": [0.1, 0.2, 0.3],
+        "singularity_curvature": 667430.0,
+        "battleship_position": [0.001, 0.002, 0.0],
+        "jump_status": true
+      }
+    ]
+  },
+  "open_source_resources": {
+    "general_skills_datasets": [
+      {
+        "name": "HuggingFace skills-full",
+        "url": "https://huggingface.co/datasets/huggingface/skills-full",
+        "mirror": "https://hf-mirror.com/datasets/huggingface/skills-full",
+        "scale": "12w+ 结构化技能"
+      },
+      {
+        "name": "SkillCorpus 9.6w",
+        "url": "https://github.com/SkillCorpus/full-dataset",
+        "scale": "9.6w 高质量技能"
+      }
+    ],
+    "taoism_specific": [
+      {
+        "name": "tao-kb 道教知识库",
+        "url": "https://github.com/tao-kb/tao-skills-full",
+        "description": "经文分词、符箓OCR、黄历吉日、论坛内容审核全套Python+Lua技能"
+      },
+      {
+        "name": "Jiayan 古汉语NLP",
+        "url": "https://github.com/JD-AI-Research-Zhida/Jiayan",
+        "license": "MIT",
+        "description": "全球首个古汉语专用Python工具包"
+      }
+    ],
+    "lua_algorithms": [
+      {
+        "name": "lunar-lua 干支黄历",
+        "url": "https://github.com/yetone/lunar-lua",
+        "license": "MIT"
+      },
+      {
+        "name": "lua-resty-waf",
+        "url": "https://github.com/lua-resty/lua-resty-waf",
+        "license": "BSD"
+      }
+    ],
+    "gateway_scheduling": [
+      {
+        "name": "Apache APISIX",
+        "url": "https://github.com/apache/apisix",
+        "license": "Apache2.0"
+      },
+      {
+        "name": "SGLang 大模型网关",
+        "url": "https://github.com/sgl-project/sglang",
+        "license": "Apache2.0"
+      }
+    ]
+  }
+}
