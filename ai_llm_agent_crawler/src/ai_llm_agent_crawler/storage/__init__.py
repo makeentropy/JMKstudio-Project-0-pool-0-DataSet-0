@@ -60,6 +60,14 @@ from ai_llm_agent_crawler.storage.pool import (
     create_nas_pool,
 )
 
+# Git 镜像池管理器 (pool/img 方案)
+from ai_llm_agent_crawler.storage.git_mirror_pool import (
+    GitMirrorPool,
+    MirrorEntry,
+    MirrorStatus,
+    create_git_mirror_pool,
+)
+
 __all__ = [
     # 存储后端
     "StorageBackend",
@@ -99,4 +107,10 @@ __all__ = [
     "NASStoragePool",
     "NASStoragePoolConfig",
     "create_nas_pool",
+
+    # Git 镜像池管理器
+    "GitMirrorPool",
+    "MirrorEntry",
+    "MirrorStatus",
+    "create_git_mirror_pool",
 ]

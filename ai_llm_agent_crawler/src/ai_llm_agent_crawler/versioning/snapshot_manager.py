@@ -22,7 +22,6 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
-import pandas as pd
 from pydantic import BaseModel, Field
 
 from ai_llm_agent_crawler.utils.config import get_settings
