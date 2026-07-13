@@ -88,6 +88,15 @@ from ai_llm_agent_crawler.dataset.metadata_manager import (
     MetadataManager,
     DatasetLifecycleManager,
 )
+from ai_llm_agent_crawler.dataset.h5_js_preview import (
+    H5DatasetInfo,
+    H5GroupInfo,
+    H5PreviewConfig,
+    H5PreviewResult,
+    H5DataExtractor,
+    H5JSPreviewGenerator,
+    H5PreviewManager,
+)
 
 __all__ = [
     # 原有导出
@@ -165,4 +174,12 @@ __all__ = [
     "MetadataStore",
     "MetadataManager",
     "DatasetLifecycleManager",
+    # HDF5 JS Preview
+    "H5DatasetInfo",
+    "H5GroupInfo",
+    "H5PreviewConfig",
+    "H5PreviewResult",
+    "H5DataExtractor",
+    "H5JSPreviewGenerator",
+    "H5PreviewManager",
 ]
