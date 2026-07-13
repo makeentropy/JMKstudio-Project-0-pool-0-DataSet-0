@@ -58,6 +58,32 @@ from ai_llm_agent_crawler.dimension.preprocessor import (
     FieldTransformer,
 )
 
+from ai_llm_agent_crawler.dimension.tables import (
+    AuditLevel,
+    DimensionTopologyNode,
+    EfficiencyAuditRecord,
+    EfficiencyAuditTable,
+    EventCondition,
+    EventLogicNode,
+    EventLogicTable,
+    EventRecord,
+    EventType,
+    LogicOperator,
+    MassEnergySingularityTopologyTable,
+    QualityMetrics,
+    ResourceUsage,
+    SingularityConnection,
+    SingularityConnectionType,
+    SingularityTopologyNode,
+    TaskPriority,
+    TaskRecord,
+    TaskStatus,
+    TaskTable,
+    TaskType,
+    TopologyMetrics,
+    TopologyType,
+)
+
 __all__ = [
     # 数据模型
     "DimensionType",
@@ -100,4 +126,29 @@ __all__ = [
     "FieldTransformer",
     "DataValidator",
     "DataPipeline",
+
+    # 数据表系统
+    "TaskStatus",
+    "TaskPriority",
+    "TaskType",
+    "TaskRecord",
+    "TaskTable",
+    "EventType",
+    "LogicOperator",
+    "EventCondition",
+    "EventLogicNode",
+    "EventRecord",
+    "EventLogicTable",
+    "AuditLevel",
+    "ResourceUsage",
+    "QualityMetrics",
+    "EfficiencyAuditRecord",
+    "EfficiencyAuditTable",
+    "TopologyType",
+    "SingularityConnectionType",
+    "DimensionTopologyNode",
+    "SingularityTopologyNode",
+    "SingularityConnection",
+    "TopologyMetrics",
+    "MassEnergySingularityTopologyTable",
 ]
