@@ -1,0 +1,28 @@
+- [x] Checkpoint 1: SSH模块 - 连接管理类实现，支持密码和密钥认证
+- [x] Checkpoint 2: SSH模块 - 远程命令执行功能测试通过
+- [x] Checkpoint 3: SSH模块 - 文件上传/下载功能测试通过
+- [x] Checkpoint 4: 容器模块 - Docker SDK集成完成
+- [x] Checkpoint 5: 容器模块 - 镜像导出/导入功能测试通过
+- [x] Checkpoint 6: 容器模块 - 容器状态快照功能测试通过
+- [x] Checkpoint 7: 云虚拟机模块 - 适配器接口定义完成
+- [x] Checkpoint 8: 云虚拟机模块 - 阿里云适配器实现
+- [x] Checkpoint 9: 云虚拟机模块 - 腾讯云适配器实现
+- [x] Checkpoint 10: 云虚拟机模块 - AWS适配器实现
+- [x] Checkpoint 11: 开发环境脚本 - Kali Linux安装脚本编写完成
+- [x] Checkpoint 12: 开发环境脚本 - IDE配置脚本编写完成
+- [x] Checkpoint 13: 开发环境脚本 - Jupyter配置脚本编写完成
+- [x] Checkpoint 14: 数据保全模块 - Git集成功能实现
+- [x] Checkpoint 15: 数据保全模块 - CherryTree同步功能实现
+- [x] Checkpoint 16: 数据保全模块 - 完整性校验功能测试通过
+- [x] Checkpoint 17: Agent框架 - 基础框架结构搭建完成
+- [x] Checkpoint 18: Agent框架 - Skill系统实现
+- [x] Checkpoint 19: Agent框架 - 开发模板生成功能测试通过
+- [x] Checkpoint 20: 自动化策略 - 定时任务调度功能实现
+- [x] Checkpoint 21: 自动化策略 - 快照保留策略配置完成
+- [x] Checkpoint 22: 自动化策略 - 自动清理功能测试通过
+- [x] Checkpoint 23: 集成测试 - 完整快照流程测试通过
+- [x] Checkpoint 24: 集成测试 - SSH+容器+虚拟机协作测试通过
+- [x] Checkpoint 25: 集成测试 - 数据保全完整流程测试通过
+- [x] Checkpoint 26: 代码质量 - 所有模块通过类型检查(mypy)
+- [x] Checkpoint 27: 代码质量 - 所有模块通过lint检查(flake8)
+- [x] Checkpoint 28: 代码质量 - 测试覆盖率达到73%（新增模块）

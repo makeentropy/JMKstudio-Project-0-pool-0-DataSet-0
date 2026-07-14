@@ -493,15 +493,15 @@ class TestPermissionFlag:
         """测试权限包含"""
         full = Permission.FULL
 
-        assert full >= Permission.READ
-        assert full >= Permission.WRITE
-        assert full >= Permission.DELETE
-        assert full >= Permission.CREATE
+        assert (full & Permission.READ) == Permission.READ
+        assert (full & Permission.WRITE) == Permission.WRITE
+        assert (full & Permission.DELETE) == Permission.DELETE
+        assert (full & Permission.CREATE) == Permission.CREATE
 
     def test_permission_all(self):
         """测试所有权限"""
         all_perms = Permission.ALL
 
-        assert all_perms >= Permission.ADMIN
-        assert all_perms >= Permission.SUPER_ADMIN
-        assert all_perms >= Permission.FULL
+        assert (all_perms & Permission.ADMIN) == Permission.ADMIN
+        assert (all_perms & Permission.SUPER_ADMIN) == Permission.SUPER_ADMIN
+        assert (all_perms & Permission.FULL) == Permission.FULL

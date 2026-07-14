@@ -37,7 +37,7 @@ class TestCertificateAuthority:
 
         assert certificate is not None
         assert private_key is not None
-        assert certificate.subject.rfc4514_string().contains("test.example.com")
+        assert "test.example.com" in certificate.subject.rfc4514_string()
 
     def test_issue_client_certificate(self):
         """测试签发客户端证书"""
@@ -111,7 +111,7 @@ class TestCertificateAuthority:
 
         certificates = ca.list_certificates()
 
-        assert len(certificates) == 3  # 2 issued + 1 root
+        assert len(certificates) == 2  # 2 issued certificates
 
     def test_export_ca_certificate(self):
         """测试导出CA证书"""

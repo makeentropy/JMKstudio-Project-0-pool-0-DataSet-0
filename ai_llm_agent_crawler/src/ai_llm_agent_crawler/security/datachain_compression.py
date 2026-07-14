@@ -842,7 +842,7 @@ class AdaptiveCompressor:
         """
         self.default_level = default_level
         self._compressor = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=default_level,
         )
 
@@ -884,6 +884,8 @@ class AdaptiveCompressor:
         if not data:
             return 0.0
 
+        import math
+
         # 统计字节频率
         freq: Dict[int, int] = {}
         for byte in data:
@@ -894,7 +896,7 @@ class AdaptiveCompressor:
         for count in freq.values():
             p = count / len(data)
             if p > 0:
-                entropy -= p * (p.bit_length() - 1)
+                entropy -= p * math.log2(p)
 
         return entropy
 
@@ -917,16 +919,16 @@ class AdaptiveCompressor:
         if repetition > 0.8:
             return CompressionAlgorithm.RLE
 
-        # 低熵 -> ZSTD
+        # 低熵 -> GZIP
         if entropy < 4:
-            return CompressionAlgorithm.ZSTD
+            return CompressionAlgorithm.GZIP
 
         # 大数据 -> LZMA
         if size > 10 * 1024 * 1024:  # 10MB
             return CompressionAlgorithm.LZMA
 
-        # 默认 -> ZSTD
-        return CompressionAlgorithm.ZSTD
+        # 默认 -> GZIP
+        return CompressionAlgorithm.GZIP
 
     def compress(
         self,
@@ -948,7 +950,7 @@ class AdaptiveCompressor:
             analysis = self.analyze_data(data)
             algorithm = analysis["recommended"]
         else:
-            algorithm = CompressionAlgorithm.ZSTD
+            algorithm = CompressionAlgorithm.GZIP
 
         return self._compressor.compress_data(data, algorithm)
 

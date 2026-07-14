@@ -106,7 +106,7 @@ class TestDataChainCompressor:
     def test_compress_decompress_block(self):
         """测试压缩和解压数据块"""
         compressor = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=5
         )
 
@@ -125,7 +125,7 @@ class TestDataChainCompressor:
     def test_compress_decompress_chain(self):
         """测试压缩和解压数据链"""
         compressor = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=5
         )
 
@@ -146,7 +146,7 @@ class TestDataChainCompressor:
     def test_serialize_deserialize_chain(self):
         """测试序列化和反序列化数据链"""
         compressor = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=5
         )
 
@@ -168,14 +168,14 @@ class TestDataChainCompressor:
 
         # 低级别（快速）
         compressor_fast = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=CompressionLevel.FASTEST.value
         )
         compressed_fast, metadata_fast = compressor_fast.compress_data(data)
 
         # 高级别（最佳压缩）
         compressor_best = DataChainCompressor(
-            algorithm=CompressionAlgorithm.ZSTD,
+            algorithm=CompressionAlgorithm.GZIP,
             level=CompressionLevel.BEST.value
         )
         compressed_best, metadata_best = compressor_best.compress_data(data)
@@ -234,7 +234,7 @@ class TestAdaptiveCompressor:
         decompressed = compressor.decompress(compressed, metadata)
 
         assert decompressed == data
-        assert metadata.algorithm == CompressionAlgorithm.ZSTD
+        assert metadata.algorithm == CompressionAlgorithm.GZIP
 
 
 class TestCompressionMetadata:
