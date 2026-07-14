@@ -1,0 +1,649 @@
+{
+  "skill_groups": {
+    "VEC": {
+      "name": "向量运维技能",
+      "description": "向量检索和索引管理",
+      "skills": [
+        {
+          "id": "VEC-001",
+          "name": "CT知识库批量向量化",
+          "description": "扫描全部ctd节点，分段嵌入绑定树形路径存入FAISS",
+          "category": "vector",
+          "input_schema": {
+            "ctd_path": "string",
+            "batch_size": "integer"
+          },
+          "output_schema": {
+            "index_path": "string",
+            "vectors_count": "integer"
+          },
+          "examples": [
+            {
+              "input": "将/root/workspace/cherrytree/CT_QUANTUM.ctd向量化",
+              "output": "已创建FAISS索引，包含1234个向量节点"
+            }
+          ]
+        },
+        {
+          "id": "VEC-002",
+          "name": "跨领域高关联片段召回",
+          "description": "同时检索物理、硬件、可视化三类向量",
+          "category": "vector",
+          "input_schema": {
+            "query": "string",
+            "top_k": "integer"
+          },
+          "output_schema": {
+            "results": "array",
+            "scores": "array"
+          },
+          "examples": [
+            {
+              "input": "检索量子奇点相关文档",
+              "output": "召回Top6: 物理文档3篇, 硬件方案2篇, 可视化1篇"
+            }
+          ]
+        },
+        {
+          "id": "VEC-003",
+          "name": "向量增量更新",
+          "description": "新增数据集/源码局部重建索引，避免全量重算",
+          "category": "vector",
+          "input_schema": {
+            "new_data": "array",
+            "index_path": "string"
+          },
+          "output_schema": {
+            "updated_count": "integer"
+          },
+          "examples": [
+            {
+              "input": "增量索引新增的50个样本",
+              "output": "索引已更新，新增50个向量"
+            }
+          ]
+        },
+        {
+          "id": "VEC-004",
+          "name": "向量脏数据审计",
+          "description": "清理空向量、乱码、冲突理论嵌入",
+          "category": "vector",
+          "input_schema": {
+            "index_path": "string"
+          },
+          "output_schema": {
+            "cleaned_count": "integer",
+            "issues_found": "array"
+          },
+          "examples": [
+            {
+              "input": "审计FAISS索引质量",
+              "output": "发现12个空向量，已清理"
+            }
+          ]
+        }
+      ]
+    },
+    "DAT": {
+      "name": "数据集流水线技能",
+      "description": "数据集生成和处理",
+      "skills": [
+        {
+          "id": "DAT-001",
+          "name": "向量驱动蒸馏",
+          "description": "基于向量关联提取质能/奇点核心实体与公式",
+          "category": "pipeline",
+          "input_schema": {
+            "raw_data": "array",
+            "vector_results": "array"
+          },
+          "output_schema": {
+            "entities": "array",
+            "compression_ratio": "float"
+          },
+          "examples": [
+            {
+              "input": "蒸馏质能转换文档",
+              "output": "提取实体: C_0=0.85, D=0.75, K=1.5e10"
+            }
+          ]
+        },
+        {
+          "id": "DAT-002",
+          "name": "向量聚类清洗",
+          "description": "相似度聚类删除重复样本、统一描述范式",
+          "category": "pipeline",
+          "input_schema": {
+            "samples": "array",
+            "threshold": "float"
+          },
+          "output_schema": {
+            "cleaned_samples": "array",
+            "duplicates_removed": "integer"
+          },
+          "examples": [
+            {
+              "input": "清洗1000个样本",
+              "output": "去除150个重复，剩余850个"
+            }
+          ]
+        },
+        {
+          "id": "DAT-003",
+          "name": "全局清算归档",
+          "description": "全局唯一skill_id，双标签分类输出jsonl",
+          "category": "pipeline",
+          "input_schema": {
+            "samples": "array"
+          },
+          "output_schema": {
+            "output_path": "string",
+            "samples_count": "integer"
+          },
+          "examples": [
+            {
+              "input": "清算并归档数据集",
+              "output": "已生成sft_dataset.jsonl，850条记录"
+            }
+          ]
+        }
+      ]
+    },
+    "PHY_QUANTUM": {
+      "name": "质能/奇点/熵核心技能",
+      "description": "物理领域核心数据处理",
+      "skills": [
+        {
+          "id": "PHY-001",
+          "name": "质能质三态转换向量建模",
+          "description": "M⇌E⇌Z闭环波函数样本生成",
+          "category": "physics",
+          "input_schema": {
+            "mass": "float",
+            "energy": "float"
+          },
+          "output_schema": {
+            "wave_function": "array",
+            "conversion_rate": "float"
+          },
+          "examples": [
+            {
+              "input": "计算质能转换波函数",
+              "output": "波函数系数: C_0=0.85, C_1=0.12..."
+            }
+          ]
+        },
+        {
+          "id": "PHY-002",
+          "name": "波函数复系数C_n提取",
+          "description": "波函数FFT向量构造",
+          "category": "physics",
+          "input_schema": {
+            "signal_data": "array"
+          },
+          "output_schema": {
+            "coefficients": "array",
+            "fft_result": "array"
+          },
+          "examples": [
+            {
+              "input": "提取波函数系数",
+              "output": "FFT分析完成，提取C_0到C_15共16个系数"
+            }
+          ]
+        },
+        {
+          "id": "PHY-003",
+          "name": "量子奇点畸变度D量化",
+          "description": "奇点畸变度D量化计算数据集生成",
+          "category": "physics",
+          "input_schema": {
+            "coordinates": "array"
+          },
+          "output_schema": {
+            "distortion_D": "float",
+            "singularity_type": "string"
+          },
+          "examples": [
+            {
+              "input": "计算奇点畸变度",
+              "output": "D=0.75，类型: 时空奇点"
+            }
+          ]
+        },
+        {
+          "id": "PHY-004",
+          "name": "直线路径最小熵耗散对照",
+          "description": "直线路径最小熵耗散对照实验样本",
+          "category": "physics",
+          "input_schema": {
+            "path_start": "array",
+            "path_end": "array"
+          },
+          "output_schema": {
+            "entropy_dissipation": "float",
+            "optimal_path": "array"
+          },
+          "examples": [
+            {
+              "input": "计算两点间最小熵耗散路径",
+              "output": "熵耗散值: 0.23，路径长度: 1.5单位"
+            }
+          ]
+        },
+        {
+          "id": "PHY-005",
+          "name": "奇点邻域熵极值拟合",
+          "description": "奇点邻域熵极值拟合CoT推理数据",
+          "category": "physics",
+          "input_schema": {
+            "singularity_point": "array"
+          },
+          "output_schema": {
+            "entropy_extrema": "array",
+            "fitting_curve": "array"
+          },
+          "examples": [
+            {
+              "input": "拟合奇点熵分布",
+              "output": "熵极值: [0.95, 0.87, 0.92]，拟合曲线已生成"
+            }
+          ]
+        },
+        {
+          "id": "PHY-006",
+          "name": "高维测地线两点最短向量",
+          "description": "高维测地线两点最短向量生成",
+          "category": "physics",
+          "input_schema": {
+            "dimensions": "integer",
+            "point_a": "array",
+            "point_b": "array"
+          },
+          "output_schema": {
+            "geodesic_path": "array",
+            "distance": "float"
+          },
+          "examples": [
+            {
+              "input": "计算5维空间测地线",
+              "output": "测地线路径已生成，距离: 2.34"
+            }
+          ]
+        },
+        {
+          "id": "PHY-007",
+          "name": "两仪乾坤二元场耦合",
+          "description": "两仪乾坤二元场耦合时序数据集",
+          "category": "physics",
+          "input_schema": {
+            "field_a": "array",
+            "field_b": "array",
+            "time_steps": "integer"
+          },
+          "output_schema": {
+            "coupled_field": "array",
+            "coupling_strength": "float"
+          },
+          "examples": [
+            {
+              "input": "耦合阴阳二元场",
+              "output": "耦合强度: 0.85，时序数据100步已生成"
+            }
+          ]
+        },
+        {
+          "id": "PHY-008",
+          "name": "地震微观应力奇点地质勘探",
+          "description": "地震微观应力奇点地质勘探样本",
+          "category": "physics",
+          "input_schema": {
+            "seismic_data": "array"
+          },
+          "output_schema": {
+            "stress_singularities": "array",
+            "depth_distribution": "array"
+          },
+          "examples": [
+            {
+              "input": "分析地震应力分布",
+              "output": "发现3个应力奇点，深度: [5km, 12km, 28km]"
+            }
+          ]
+        },
+        {
+          "id": "PHY-009",
+          "name": "超弦世界面耦合方程",
+          "description": "超弦世界面耦合方程结构化输出",
+          "category": "physics",
+          "input_schema": {
+            "string_params": "object"
+          },
+          "output_schema": {
+            "worldsheet_equation": "string",
+            "coupling_matrix": "array"
+          },
+          "examples": [
+            {
+              "input": "构建超弦世界面方程",
+              "output": "方程: S = ∫d²σ √-h h^{ab} ∂_a X^μ ∂_b X_μ"
+            }
+          ]
+        },
+        {
+          "id": "PHY-010",
+          "name": "黄金比例维度分层仿真",
+          "description": "黄金比例维度分层仿真数据",
+          "category": "physics",
+          "input_schema": {
+            "base_dimension": "integer",
+            "layers": "integer"
+          },
+          "output_schema": {
+            "dimension_layers": "array",
+            "golden_ratios": "array"
+          },
+          "examples": [
+            {
+              "input": "生成黄金比例维度层",
+              "output": "维度层: [1, 1.618, 2.618, 4.236]"
+            }
+          ]
+        },
+        {
+          "id": "PHY-011",
+          "name": "胡夫金字塔高维权限层级",
+          "description": "胡夫金字塔高维权限层级推演样本",
+          "category": "physics",
+          "input_schema": {
+            "pyramid_level": "integer"
+          },
+          "output_schema": {
+            "permission_hierarchy": "array",
+            "dimensional_access": "array"
+          },
+          "examples": [
+            {
+              "input": "推演金字塔第3层权限",
+              "output": "权限层级: [基础, 中级, 高级]，维度访问: [3D, 4D, 5D]"
+            }
+          ]
+        },
+        {
+          "id": "PHY-012",
+          "name": "莫比乌斯热力拓扑熵分布",
+          "description": "莫比乌斯热力拓扑熵分布数据集",
+          "category": "physics",
+          "input_schema": {
+            "mobius_params": "object"
+          },
+          "output_schema": {
+            "entropy_distribution": "array",
+            "topology_map": "array"
+          },
+          "examples": [
+            {
+              "input": "生成莫比乌斯熵分布",
+              "output": "拓扑熵: [0.45, 0.67, 0.89]，分布图已生成"
+            }
+          ]
+        }
+      ]
+    },
+    "HARD": {
+      "name": "ESP32勘探硬件解析技能",
+      "description": "硬件数据采集和解析",
+      "skills": [
+        {
+          "id": "HARD-001",
+          "name": "声卡声波物质波采样",
+          "description": "3.5mm声卡声波物质波采样数据解析",
+          "category": "hardware",
+          "input_schema": {
+            "audio_file": "string",
+            "sample_rate": "integer"
+          },
+          "output_schema": {
+            "wave_data": "array",
+            "frequency_spectrum": "array"
+          },
+          "examples": [
+            {
+              "input": "解析声波采样数据",
+              "output": "采样率: 44100Hz，频率范围: 20Hz-20kHz"
+            }
+          ]
+        },
+        {
+          "id": "HARD-002",
+          "name": "SI5351全频射频电磁波",
+          "description": "SI5351全频射频电磁波向量转译",
+          "category": "hardware",
+          "input_schema": {
+            "rf_data": "array",
+            "frequency": "float"
+          },
+          "output_schema": {
+            "rf_vector": "array",
+            "signal_strength": "float"
+          },
+          "examples": [
+            {
+              "input": "转译SI5351射频数据",
+              "output": "频率: 145MHz，信号强度: -42dBm"
+            }
+          ]
+        },
+        {
+          "id": "HARD-003",
+          "name": "ADXL345地震振动应力波",
+          "description": "ADXL345地震振动应力波特征提取",
+          "category": "hardware",
+          "input_schema": {
+            "accel_data": "array"
+          },
+          "output_schema": {
+            "stress_wave": "array",
+            "peak_frequency": "float"
+          },
+          "examples": [
+            {
+              "input": "提取地震应力波特征",
+              "output": "峰值频率: 2.3Hz，振幅: 0.15g"
+            }
+          ]
+        },
+        {
+          "id": "HARD-004",
+          "name": "摩尔斯CW波函数压缩",
+          "description": "摩尔斯CW波函数向量压缩编码",
+          "category": "hardware",
+          "input_schema": {
+            "morse_signal": "array"
+          },
+          "output_schema": {
+            "compressed_vector": "array",
+            "encoding_map": "object"
+          },
+          "examples": [
+            {
+              "input": "压缩摩尔斯信号",
+              "output": "压缩比: 0.35，编码映射已生成"
+            }
+          ]
+        },
+        {
+          "id": "HARD-005",
+          "name": "Boost裸盘二进制扫描",
+          "description": "硬件采样原始bin文件Boost扫描解析",
+          "category": "hardware",
+          "input_schema": {
+            "bin_file": "string"
+          },
+          "output_schema": {
+            "parsed_data": "array",
+            "file_structure": "object"
+          },
+          "examples": [
+            {
+              "input": "解析scan.bin文件",
+              "output": "文件大小: 10MB，解析出1234个数据块"
+            }
+          ]
+        }
+      ]
+    },
+    "VIS": {
+      "name": "四维可视化导出技能",
+      "description": "WebGL可视化数据生成",
+      "skills": [
+        {
+          "id": "VIS-001",
+          "name": "波函数四维WebGL图谱",
+          "description": "波函数四维WebGL图谱数据集导出",
+          "category": "visualization",
+          "input_schema": {
+            "wave_function": "array"
+          },
+          "output_schema": {
+            "webgl_data": "object",
+            "vertex_count": "integer"
+          },
+          "examples": [
+            {
+              "input": "导出波函数WebGL数据",
+              "output": "顶点数: 10000，纹理已生成"
+            }
+          ]
+        },
+        {
+          "id": "VIS-002",
+          "name": "金字塔/莫比乌斯拓扑渲染",
+          "description": "金字塔/莫比乌斯拓扑渲染参数生成",
+          "category": "visualization",
+          "input_schema": {
+            "topology_type": "string"
+          },
+          "output_schema": {
+            "render_params": "object",
+            "mesh_data": "array"
+          },
+          "examples": [
+            {
+              "input": "生成金字塔渲染参数",
+              "output": "网格面数: 120，材质参数已配置"
+            }
+          ]
+        },
+        {
+          "id": "VIS-003",
+          "name": "奇点热力色阶标注",
+          "description": "奇点热力色阶标注结构化样本",
+          "category": "visualization",
+          "input_schema": {
+            "singularity_data": "array"
+          },
+          "output_schema": {
+            "color_scale": "array",
+            "annotation_data": "object"
+          },
+          "examples": [
+            {
+              "input": "生成奇点热力色阶",
+              "output": "色阶: ['#0000FF', '#00FF00', '#FF0000']"
+            }
+          ]
+        }
+      ]
+    },
+    "STRAIGHT": {
+      "name": "几何公理技能",
+      "description": "几何空间计算",
+      "skills": [
+        {
+          "id": "STRAIGHT-01",
+          "name": "n维两点最短直线向量",
+          "description": "n维两点最短直线向量生成",
+          "category": "geometry",
+          "input_schema": {
+            "dimensions": "integer",
+            "point_a": "array",
+            "point_b": "array"
+          },
+          "output_schema": {
+            "line_vector": "array",
+            "length": "float"
+          },
+          "examples": [
+            {
+              "input": "计算5维空间两点连线",
+              "output": "向量: [1, 2, 3, 4, 5]，长度: √55"
+            }
+          ]
+        },
+        {
+          "id": "STRAIGHT-02",
+          "name": "路径弯曲度与熵增关联",
+          "description": "路径弯曲度与熵增关联建模",
+          "category": "geometry",
+          "input_schema": {
+            "path_points": "array"
+          },
+          "output_schema": {
+            "curvature": "float",
+            "entropy_increase": "float"
+          },
+          "examples": [
+            {
+              "input": "分析路径弯曲熵增",
+              "output": "弯曲度: 0.23，熵增: 0.15"
+            }
+          ]
+        },
+        {
+          "id": "STRAIGHT-03",
+          "name": "两仪两极直线耦合时序",
+          "description": "两仪两极直线耦合时序数据",
+          "category": "geometry",
+          "input_schema": {
+            "polarity": "string",
+            "time_steps": "integer"
+          },
+          "output_schema": {
+            "coupling_data": "array",
+            "phase_diagram": "array"
+          },
+          "examples": [
+            {
+              "input": "生成阴阳耦合时序",
+              "output": "时序数据100步，相位图已生成"
+            }
+          ]
+        },
+        {
+          "id": "STRAIGHT-04",
+          "name": "奇点直线跃迁跨维度",
+          "description": "奇点直线跃迁跨维度样本",
+          "category": "geometry",
+          "input_schema": {
+            "source_dim": "integer",
+            "target_dim": "integer"
+          },
+          "output_schema": {
+            "transition_path": "array",
+            "energy_required": "float"
+          },
+          "examples": [
+            {
+              "input": "计算3D到5D跃迁路径",
+              "output": "跃迁能量: 1.2e15 J，路径已优化"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "created_at": "2025-01-15",
+  "total_skills": 28
+}
