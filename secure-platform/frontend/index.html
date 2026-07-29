@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="安全平台 - 证书校验、加密工具、光谱分析、支付中心">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self';
+                   style-src 'self';
+                   img-src 'self' data: blob:;
+                   connect-src 'self';
+                   font-src 'self' data:;
+                   frame-ancestors 'none';
+                   base-uri 'self';
+                   form-action 'self';
+                   object-src 'none';
+                   plugin-types 'none';
+                   worker-src 'none';
+                   media-src 'none';">
+    <title>安全平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">&#9670;</span>
+                <span class="logo-text">SECURE PLATFORM</span>
+            </div>
+            <div class="header-status">
+                <span id="cert-status-indicator" class="status-indicator status-disconnected"></span>
+                <span id="cert-status-text" class="status-text">未认证</span>
+            </div>
+        </header>
+
+        <nav class="tab-nav" role="tablist">
+            <button class="tab-btn active" data-tab="certificate" role="tab" aria-selected="true" aria-controls="tab-certificate">
+                <span class="tab-icon">&#128274;</span>
+                <span class="tab-label">证书校验</span>
+            </button>
+            <button class="tab-btn" data-tab="crypto" role="tab" aria-selected="false" aria-controls="tab-crypto">
+                <span class="tab-icon">&#128273;</span>
+                <span class="tab-label">加密工具</span>
+            </button>
+            <button class="tab-btn" data-tab="spectrum" role="tab" aria-selected="false" aria-controls="tab-spectrum">
+                <span class="tab-icon">&#127752;</span>
+                <span class="tab-label">光谱分析</span>
+            </button>
+            <button class="tab-btn" data-tab="payment" role="tab" aria-selected="false" aria-controls="tab-payment">
+                <span class="tab-icon">&#128179;</span>
+                <span class="tab-label">支付中心</span>
+            </button>
+        </nav>
+
+        <main class="tab-content-container">
+            <section id="tab-certificate" class="tab-panel active" role="tabpanel">
+                <div class="panel-header">
+                    <h2 class="panel-title">证书校验中心</h2>
+                    <p class="panel-subtitle">上传并验证X.509 PEM格式数字证书</p>
+                </div>
+
+                <div id="cert-gate" class="gate-container hidden">
+                    <div class="gate-icon">&#128274;</div>
+                    <h3 class="gate-title">需要有效证书访问</h3>
+                    <p class="gate-message">请先在【证书校验】Tab上传并通过证书验证</p>
+                </div>
+
+                <div id="cert-main-content">
+                    <div class="grid-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">证书上传</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label" for="cert-file-input">选择PEM证书文件</label>
+                                    <input type="file" id="cert-file-input" class="form-input-file" accept=".pem,.crt,.cer,.cert">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="cert-paste-area">或粘贴PEM证书内容</label>
+                                    <textarea id="cert-paste-area" class="form-textarea" rows="8"
+                                              placeholder="-----BEGIN CERTIFICATE-----&#10;...&#10;-----END CERTIFICATE-----"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button id="cert-parse-btn" class="btn btn-primary">解析证书</button>
+                                    <button id="cert-verify-btn" class="btn btn-secondary">在线校验</button>
+                                    <button id="cert-clear-btn" class="btn btn-outline">清除</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">证书信息</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="cert-info-empty" class="empty-state">
+                                    <span class="empty-icon">&#128196;</span>
+                                    <p class="empty-text">暂无证书信息，请先上传或解析证书</p>
+                                </div>
+                                <table id="cert-info-table" class="info-table hidden">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">主题 (Subject)</th>
+                                            <td id="cert-subject">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">颁发者 (Issuer)</th>
+                                            <td id="cert-issuer">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">序列号 (Serial)</th>
+                                            <td id="cert-serial">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">生效时间</th>
+                                            <td id="cert-not-before">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">过期时间</th>
+                                            <td id="cert-not-after">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">签名算法</th>
+                                            <td id="cert-sig-alg">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">SHA-256 指纹</th>
+                                            <td id="cert-fingerprint" class="mono-text">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">公钥算法</th>
+                                            <td id="cert-pubkey-alg">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">公钥长度</th>
+                                            <td id="cert-pubkey-size">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cert-verify-result" class="result-panel hidden">
+                        <div class="result-header">
+                            <h3 class="result-title">在线校验结果</h3>
+                        </div>
+                        <div id="cert-verify-content" class="result-content"></div>
+                    </div>
+
+                    <div id="cert-history" class="card hidden">
+                        <div class="card-header">
+                            <h3 class="card-title">历史证书指纹 (Session)</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="cert-fingerprint-list" class="fingerprint-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-crypto" class="tab-panel" role="tabpanel">
+                <div class="panel-header">
+                    <h2 class="panel-title">加密解密工具</h2>
+                    <p class="panel-subtitle">支持多种加密算法的编码解码操作</p>
+                </div>
+
+                <div class="gate-container" id="crypto-gate">
+                    <div class="gate-icon">&#128274;</div>
+                    <h3 class="gate-title">需要有效证书访问</h3>
+                    <p class="gate-message">请先在【证书校验】Tab上传并通过证书验证</p>
+                </div>
+
+                <div id="crypto-main-content" class="hidden">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">加密配置</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label class="form-label" for="crypto-algorithm">算法选择</label>
+                                    <select id="crypto-algorithm" class="form-select">
+                                        <option value="xor">XOR (支持多层密钥)</option>
+                                        <option value="base64">Base64 编码/解码</option>
+                                        <option value="url">URL 编码/解码</option>
+                                        <option value="aes-gcm">AES-GCM 加密/解密</option>
+                                        <option value="hybrid">混合加密 (XOR+Base64+AES)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label class="form-label" for="crypto-mode">操作模式</label>
+                                    <select id="crypto-mode" class="form-select">
+                                        <option value="encrypt">加密 / 编码</option>
+                                        <option value="decrypt">解密 / 解码</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label class="form-label" for="crypto-key">密钥 (XOR/AES)</label>
+                                    <input type="text" id="crypto-key" class="form-input" placeholder="请输入密钥">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label class="form-label" for="crypto-password">密码 (AES-GCM)</label>
+                                    <input type="password" id="crypto-password" class="form-input" placeholder="AES-GCM 密码">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label class="form-label" for="crypto-iv">IV/Nonce (可选)</label>
+                                    <input type="text" id="crypto-iv" class="form-input" placeholder="AES-GCM 初始化向量">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-container grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">输入数据</h3>
+                                <div class="card-actions">
+                                    <button id="crypto-clear-input" class="btn btn-outline btn-sm">清空</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="crypto-input" class="form-textarea crypto-textarea" rows="12"
+                                          placeholder="在此输入需要处理的文本..."></textarea>
+                                <div class="textarea-footer">
+                                    <span id="crypto-input-length" class="char-count">字符数: 0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">输出结果</h3>
+                                <div class="card-actions">
+                                    <button id="crypto-copy-output" class="btn btn-outline btn-sm">复制</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="crypto-output" class="form-textarea crypto-textarea output-area" rows="12" readonly
+                                          placeholder="处理结果将显示在这里..."></textarea>
+                                <div class="textarea-footer">
+                                    <span id="crypto-output-length" class="char-count">字符数: 0</span>
+                                    <span id="crypto-status" class="crypto-status"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions center">
+                        <button id="crypto-process-btn" class="btn btn-primary btn-lg">执行处理</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-spectrum" class="tab-panel" role="tabpanel">
+                <div class="panel-header">
+                    <h2 class="panel-title">光谱分析模块</h2>
+                    <p class="panel-subtitle">基于分辨率等级的可见光光谱分析与可视化</p>
+                </div>
+
+                <div class="gate-container" id="spectrum-gate">
+                    <div class="gate-icon">&#128274;</div>
+                    <h3 class="gate-title">需要有效证书访问</h3>
+                    <p class="gate-message">请先在【证书校验】Tab上传并通过证书验证</p>
+                </div>
+
+                <div id="spectrum-main-content" class="hidden">
+                    <div class="grid-container grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">设备信息</h3>
+                            </div>
+                            <div class="card-body">
+                                <table class="info-table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">屏幕分辨率</th>
+                                            <td id="screen-resolution">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">窗口尺寸</th>
+                                            <td id="window-size">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">设备像素比 (DPR)</th>
+                                            <td id="device-pixel-ratio">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">色深</th>
+                                            <td id="color-depth">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">分辨率等级</th>
+                                            <td id="resolution-level">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">可访问光谱范围</th>
+                                            <td id="spectral-range">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">分辨率分级说明</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="level-list">
+                                    <li>
+                                        <span class="level-badge level-low">Level 1</span>
+                                        <span class="level-desc">低分辨率: &lt; 1280x720, 可见光谱 500-650nm (限制频段)</span>
+                                    </li>
+                                    <li>
+                                        <span class="level-badge level-mid">Level 2</span>
+                                        <span class="level-desc">中分辨率: 1280x720 ~ 1920x1080, 可见光谱 440-720nm</span>
+                                    </li>
+                                    <li>
+                                        <span class="level-badge level-high">Level 3</span>
+                                        <span class="level-desc">高分辨率: 1920x1080 ~ 2560x1440, 可见光谱 400-760nm</span>
+                                    </li>
+                                    <li>
+                                        <span class="level-badge level-ultra">Level 4</span>
+                                        <span class="level-desc">超高清: &gt;= 2560x1440, 全光谱 380-780nm</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">可见光光谱可视化</h3>
+                            <div class="card-actions">
+                                <span id="spectrum-range-label" class="range-label">波长范围: -</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="canvas-container">
+                                <canvas id="spectrum-canvas" class="spectrum-canvas"></canvas>
+                            </div>
+                            <div class="spectrum-axis">
+                                <span class="axis-start">380nm</span>
+                                <span class="axis-end">780nm</span>
+                            </div>
+                            <div class="spectrum-legend">
+                                <div class="legend-item"><span class="legend-color" style="background:#8B00FF"></span>紫 380-450nm</div>
+                                <div class="legend-item"><span class="legend-color" style="background:#0000FF"></span>蓝 450-495nm</div>
+                                <div class="legend-item"><span class="legend-color" style="background:#00FF00"></span>绿 495-570nm</div>
+                                <div class="legend-item"><span class="legend-color" style="background:#FFFF00"></span>黄 570-590nm</div>
+                                <div class="legend-item"><span class="legend-color" style="background:#FF7F00"></span>橙 590-620nm</div>
+                                <div class="legend-item"><span class="legend-color" style="background:#FF0000"></span>红 620-780nm</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">波长详情查询</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label class="form-label" for="wavelength-input">输入波长 (380-780 nm)</label>
+                                    <input type="number" id="wavelength-input" class="form-input" min="380" max="780" step="1" value="550">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button id="wavelength-check-btn" class="btn btn-primary">查询波长信息</button>
+                                </div>
+                            </div>
+                            <div id="wavelength-result" class="wavelength-result hidden">
+                                <div class="wavelength-preview">
+                                    <div id="wavelength-color" class="wavelength-color-box"></div>
+                                </div>
+                                <div class="wavelength-info">
+                                    <p><strong>波长:</strong> <span id="wl-value">-</span> nm</p>
+                                    <p><strong>颜色区域:</strong> <span id="wl-region">-</span></p>
+                                    <p><strong>RGB值:</strong> <span id="wl-rgb">-</span></p>
+                                    <p><strong>HEX值:</strong> <span id="wl-hex" class="mono-text">-</span></p>
+                                    <p><strong>访问权限:</strong> <span id="wl-access">-</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tab-payment" class="tab-panel" role="tabpanel">
+                <div class="panel-header">
+                    <h2 class="panel-title">支付中心</h2>
+                    <p class="panel-subtitle">安全支付接入配置与管理</p>
+                </div>
+
+                <div class="gate-container" id="payment-gate">
+                    <div class="gate-icon">&#128274;</div>
+                    <h3 class="gate-title">需要有效证书访问</h3>
+                    <p class="gate-message">请先在【证书校验】Tab上传并通过证书验证</p>
+                </div>
+
+                <div id="payment-main-content" class="hidden">
+                    <div class="grid-container grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">支付产品配置</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-provider">支付渠道</label>
+                                    <select id="payment-provider" class="form-select">
+                                        <option value="">请选择支付渠道</option>
+                                        <option value="alipay">支付宝支付</option>
+                                        <option value="douyinpay">抖音支付</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-product">支付产品</label>
+                                    <select id="payment-product" class="form-select" disabled>
+                                        <option value="">请先选择支付渠道</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-env">接入环境</label>
+                                    <select id="payment-env" class="form-select">
+                                        <option value="sandbox">沙箱环境</option>
+                                        <option value="production">正式环境</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-appid">应用ID (AppID)</label>
+                                    <input type="text" id="payment-appid" class="form-input" placeholder="请输入应用ID">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-signtype">签名算法</label>
+                                    <select id="payment-signtype" class="form-select">
+                                        <option value="RSA2">RSA2 (SHA256WithRSA) - 推荐</option>
+                                        <option value="RSA">RSA (SHA1WithRSA)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">订单信息</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-outtradeno">商户订单号</label>
+                                    <input type="text" id="payment-outtradeno" class="form-input" placeholder="自动生成或自定义">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-subject">订单标题</label>
+                                    <input type="text" id="payment-subject" class="form-input" placeholder="商品名称或订单标题">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group flex-1">
+                                        <label class="form-label" for="payment-amount">订单金额 (元)</label>
+                                        <input type="number" id="payment-amount" class="form-input" step="0.01" min="0.01" placeholder="0.00">
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label class="form-label" for="payment-currency">币种</label>
+                                        <select id="payment-currency" class="form-select">
+                                            <option value="CNY">人民币 (CNY)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-notifyurl">异步通知地址</label>
+                                    <input type="url" id="payment-notifyurl" class="form-input" placeholder="https://your-domain.com/api/payment/notify">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="payment-returnurl">同步跳转地址</label>
+                                    <input type="url" id="payment-returnurl" class="form-input" placeholder="https://your-domain.com/payment/return">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">支付流程说明</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="payment-flow">
+                                <div class="flow-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-content">
+                                        <h4>服务端创建订单</h4>
+                                        <p>后端组装支付参数并签名，签名操作必须在服务端完成，私钥严禁存放客户端</p>
+                                    </div>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-content">
+                                        <h4>调起支付</h4>
+                                        <p>根据支付产品类型（App/H5/PC/JSAPI）在客户端唤起对应支付收银台</p>
+                                    </div>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-content">
+                                        <h4>异步通知验签</h4>
+                                        <p>收到支付平台异步通知后，必须先验签再处理业务逻辑</p>
+                                    </div>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-content">
+                                        <h4>查询确认结果</h4>
+                                        <p>前台结果不可信，必须依赖异步通知或调用查询接口确认支付状态</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-notice">
+                        <h4 class="notice-title">&#9888;&#65039; 安全红线</h4>
+                        <ul class="notice-list">
+                            <li>私钥禁止存客户端：构造交易数据并签名必须在商家服务端完成</li>
+                            <li>私钥禁止记日志：私钥不得出现在任何日志中</li>
+                            <li>私钥禁止传公共仓库：私钥不得上传到GitHub、GitLab等公共代码仓库</li>
+                            <li>前台支付结果不可信：必须以异步通知或调用交易查询接口获取结果为准</li>
+                            <li>未确认不重付：未确认支付结果前，不能要求用户再次付款</li>
+                            <li>异步通知必须先验签：收到异步通知后必须先验签，确保通知来自支付平台</li>
+                        </ul>
+                    </div>
+
+                    <div class="form-actions center">
+                        <button id="payment-create-order-btn" class="btn btn-primary btn-lg">创建支付订单</button>
+                        <button id="payment-query-btn" class="btn btn-secondary btn-lg">查询订单状态</button>
+                    </div>
+
+                    <div id="payment-result" class="result-panel hidden">
+                        <div class="result-header">
+                            <h3 class="result-title">操作结果</h3>
+                        </div>
+                        <div id="payment-result-content" class="result-content"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+        <footer class="app-footer">
+            <span class="footer-text">&copy; 2026 Secure Platform. All rights reserved.</span>
+            <span class="footer-version">v1.0.0</span>
+        </footer>
+    </div>
+
+    <script src="js/certificate-asn1.js"></script>
+    <script src="js/certificate-verify.js"></script>
+    <script src="js/crypto-algorithms.js"></script>
+    <script src="js/crypto-tools.js"></script>
+    <script src="js/spectrum.js"></script>
+    <script src="js/payment-center.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

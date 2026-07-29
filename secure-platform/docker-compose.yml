@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: secure-platform:latest
+    container_name: secure-platform-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3000
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./certs:/app/certs
+    depends_on:
+      - redis
+    networks:
+      - secure-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: secure-platform-redis
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis}
+    volumes:
+      - redis-data:/data
+    networks:
+      - secure-network
+    restart: unless-stopped
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: secure-platform:latest
+    container_name: secure-platform-tests
+    environment:
+      - NODE_ENV=test
+      - PORT=3000
+    env_file:
+      - .env
+    command: npm run test
+    depends_on:
+      - redis
+    networks:
+      - secure-network
+
+volumes:
+  redis-data:
+    driver: local
+
+networks:
+  secure-network:
+    driver: bridge
+    internal: false
