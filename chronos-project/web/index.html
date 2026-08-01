@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>CHRONOS · 时空工作站 | Workgroup + BioClock + Attention</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⏱</span>
+      <span class="title">CHRONOS</span>
+      <span class="subtitle">时空工作站</span>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-tab="dashboard">看板</button>
+      <button class="tab" data-tab="projects">项目</button>
+      <button class="tab" data-tab="jobs">任务</button>
+      <button class="tab" data-tab="bioclock">生物钟</button>
+      <button class="tab" data-tab="attention">注意力</button>
+      <button class="tab" data-tab="sync">同步</button>
+    </nav>
+    <div class="clock">
+      <span id="liveClock">--:--:--</span>
+      <span id="liveDate">----/--/--</span>
+    </div>
+  </header>
+
+  <!-- Tab: Dashboard -->
+  <section id="tab-dashboard" class="panel active">
+    <div class="grid-3">
+      <div class="card stat-card">
+        <div class="stat-label">活跃项目</div>
+        <div class="stat-value" id="statActiveProjects">0</div>
+        <div class="stat-trend">进行中</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">待办任务</div>
+        <div class="stat-value" id="statPendingJobs">0</div>
+        <div class="stat-trend">Workgroup Job</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">今日专注时长</div>
+        <div class="stat-value" id="statFocusMinutes">0</div>
+        <div class="stat-trend">分钟</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>📌 近期任务</h3>
+        <ul id="recentJobs" class="job-list"></ul>
+      </div>
+      <div class="card">
+        <h3>🧬 生物钟节律提示</h3>
+        <div id="circadianHints" class="circadian-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: Projects -->
+  <section id="tab-projects" class="panel">
+    <div class="panel-header">
+      <h2>项目管理 / Project Cycle</h2>
+      <button class="btn primary" id="btnAddProject">+ 新建项目</button>
+    </div>
+    <div id="projectGrid" class="project-grid"></div>
+  </section>
+
+  <!-- Tab: Jobs -->
+  <section id="tab-jobs" class="panel">
+    <div class="panel-header">
+      <h2>任务跟进 / Workgroup Job</h2>
+      <div class="filters">
+        <select id="filterProject"><option value="">全部项目</option></select>
+        <select id="filterStatus">
+          <option value="">全部状态</option>
+          <option value="todo">待办</option>
+          <option value="in_progress">进行中</option>
+          <option value="review">评审中</option>
+          <option value="done">完成</option>
+          <option value="blocked">阻塞</option>
+        </select>
+        <select id="filterPriority">
+          <option value="">全部优先级</option>
+          <option value="urgent">紧急</option>
+          <option value="high">高</option>
+          <option value="medium">中</option>
+          <option value="low">低</option>
+        </select>
+        <button class="btn primary" id="btnAddJob">+ 新建任务</button>
+      </div>
+    </div>
+    <div class="kanban" id="kanbanBoard">
+      <div class="kanban-col" data-status="todo">
+        <div class="col-header">待办 <span class="count" id="cnt-todo">0</span></div>
+        <div class="col-body" id="col-todo"></div>
+      </div>
+      <div class="kanban-col" data-status="in_progress">
+        <div class="col-header">进行中 <span class="count" id="cnt-in_progress">0</span></div>
+        <div class="col-body" id="col-in_progress"></div>
+      </div>
+      <div class="kanban-col" data-status="review">
+        <div class="col-header">评审 <span class="count" id="cnt-review">0</span></div>
+        <div class="col-body" id="col-review"></div>
+      </div>
+      <div class="kanban-col" data-status="done">
+        <div class="col-header">完成 <span class="count" id="cnt-done">0</span></div>
+        <div class="col-body" id="col-done"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: BioClock -->
+  <section id="tab-bioclock" class="panel">
+    <div class="panel-header">
+      <h2>等时声频生物钟 / Isochronic Biological Clock</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>🎛 频率控制台</h3>
+        <div class="preset-row">
+          <button class="preset" data-preset="focus">🧠 专注 40Hz</button>
+          <button class="preset" data-preset="relax">🌊 放松 8Hz</button>
+          <button class="preset" data-preset="meditate">🧘 冥想 6Hz</button>
+          <button class="preset" data-preset="sleep">🌙 睡眠 2.5Hz</button>
+          <button class="preset" data-preset="energy">⚡ 能量 15Hz</button>
+        </div>
+        <div class="form-row">
+          <label>模式</label>
+          <select id="beatType">
+            <option value="isochronic">等时声频 Isochronic (推荐)</option>
+            <option value="binaural">双耳拍频 Binaural</option>
+            <option value="monaural">单耳拍频 Monaural</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>节拍频率 (Hz): <span id="freqVal">10.0</span></label>
+          <input type="range" id="freqSlider" min="0.5" max="50" step="0.1" value="10">
+        </div>
+        <div class="form-row">
+          <label>载波频率 (Hz): <span id="carrierVal">200</span></label>
+          <input type="range" id="carrierSlider" min="80" max="800" step="1" value="200">
+        </div>
+        <div class="form-row">
+          <label>时长 (分钟): <span id="durVal">15</span></label>
+          <input type="range" id="durSlider" min="1" max="120" step="1" value="15">
+        </div>
+        <div class="form-row">
+          <label>音量: <span id="volVal">60</span>%</label>
+          <input type="range" id="volSlider" min="0" max="100" step="1" value="60">
+        </div>
+        <div class="play-controls">
+          <button class="btn play" id="btnPlay">▶ 开始</button>
+          <button class="btn stop" id="btnStop" disabled>■ 停止</button>
+          <div class="timer" id="timerDisplay">00:00 / 15:00</div>
+        </div>
+        <canvas id="waveCanvas" width="500" height="80"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>📖 频率参考 (神经科学)</h3>
+        <table class="freq-table">
+          <tr><th>频段</th><th>频率</th><th>关联状态</th></tr>
+          <tr><td>δ Delta</td><td>0.5 - 4 Hz</td><td>深度睡眠、修复</td></tr>
+          <tr><td>θ Theta</td><td>4 - 8 Hz</td><td>冥想、浅眠、创意</td></tr>
+          <tr><td>α Alpha</td><td>8 - 13 Hz</td><td>放松、清醒休息</td></tr>
+          <tr><td>SMR</td><td>12 - 15 Hz</td><td>平静专注</td></tr>
+          <tr><td>β Beta</td><td>13 - 30 Hz</td><td>警觉、思考、问题解决</td></tr>
+          <tr><td>γ Gamma</td><td>30 - 100 Hz</td><td>高度专注、认知整合</td></tr>
+        </table>
+        <h3 style="margin-top:1rem">📊 历史记录</h3>
+        <ul id="sessionHistory" class="job-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: Attention -->
+  <section id="tab-attention" class="panel">
+    <div class="panel-header">
+      <h2>注意力 & 意识状态追踪 / Attention Tracking</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>✍ 记录当前状态</h3>
+        <div class="form-row">
+          <label>当前任务</label>
+          <input type="text" id="attTask" placeholder="例如：写代码/阅读/开会...">
+        </div>
+        <div class="form-row">
+          <label>专注程度: <span id="attScoreVal">70</span>/100</label>
+          <input type="range" id="attScore" min="0" max="100" step="1" value="70">
+        </div>
+        <div class="form-row">
+          <label>唤醒水平 (1昏沉 ~ 5兴奋)</label>
+          <div class="arousal-picker">
+            <button class="arousal" data-v="1">😴</button>
+            <button class="arousal" data-v="2">🥱</button>
+            <button class="arousal active" data-v="3">🙂</button>
+            <button class="arousal" data-v="4">💪</button>
+            <button class="arousal" data-v="5">🔥</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>备注</label>
+          <textarea id="attNote" rows="2" placeholder="环境、情绪、使用了什么频率..."></textarea>
+        </div>
+        <button class="btn primary" id="btnSaveAttention">💾 保存记录</button>
+      </div>
+
+      <div class="card">
+        <h3>📈 今日状态流</h3>
+        <canvas id="attentionChart" width="500" height="200"></canvas>
+        <h3 style="margin-top:1rem">🕒 最近记录</h3>
+        <ul id="attentionList" class="job-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab: Sync -->
+  <section id="tab-sync" class="panel">
+    <div class="panel-header">
+      <h2>数据同步 / Sync (Web ↔ Termux CLI)</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>🔄 同步状态</h3>
+        <div class="sync-info">
+          <div><b>Web最后同步：</b><span id="lastWebSync">-</span></div>
+          <div><b>CLI最后同步：</b><span id="lastCliSync">-</span></div>
+          <div><b>数据版本：</b><span id="dataVersion">1</span></div>
+          <div><b>冲突数量：</b><span id="conflictCount">0</span></div>
+        </div>
+        <h3 style="margin-top:1rem">📦 导出/导入</h3>
+        <div class="button-row">
+          <button class="btn primary" id="btnExport">⬇ 导出 JSON</button>
+          <button class="btn" id="btnImportBtn">⬆ 导入 JSON</button>
+          <input type="file" id="fileImport" accept=".json" style="display:none">
+          <button class="btn danger" id="btnClearData">🗑 清空所有数据</button>
+        </div>
+        <textarea id="syncTextarea" rows="8" placeholder="在此粘贴 Termux CLI 导出的 JSON 以合并..."></textarea>
+        <div class="button-row">
+          <button class="btn primary" id="btnMergeText">🔀 合并上方JSON</button>
+          <button class="btn" id="btnCopyJson">📋 复制当前JSON到剪贴板</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>📱 Termux 使用指南</h3>
+<pre class="termux-guide">
+# 1. 安装依赖
+pkg install python python-numpy
+pip install prompt-toolkit
+
+# 2. 启动 CLI
+cd chronos-project/cli
+python chronos_cli.py
+
+# 3. 终端 UI 模式 (curses)
+python chronos_cli.py tui
+
+# 4. 导出数据 (供 Web 导入)
+python chronos_cli.py export &gt; data.json
+
+# 5. 导入 Web 导出的数据
+python chronos_cli.py import web_data.json
+
+# CLI 快捷命令:
+chronos&gt; help        查看帮助
+chronos&gt; projects    项目列表
+chronos&gt; jobs        任务列表
+chronos&gt; bioclock    生物钟列表
+chronos&gt; focus 40 15 启动40Hz 15分钟专注
+chronos&gt; sync        查看同步状态
+</pre>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Modal: Project Form -->
+<div id="modalProject" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="modalProjectTitle">新建项目</h3>
+    <div class="form-row"><label>项目名称</label><input id="pName" type="text"></div>
+    <div class="form-row"><label>描述</label><textarea id="pDesc" rows="2"></textarea></div>
+    <div class="form-row">
+      <label>开始日期</label><input id="pStart" type="date">
+      <label>结束日期</label><input id="pEnd" type="date">
+    </div>
+    <div class="form-row"><label>状态</label>
+      <select id="pStatus">
+        <option value="planning">规划中</option>
+        <option value="active">进行中</option>
+        <option value="paused">暂停</option>
+        <option value="completed">已完成</option>
+      </select>
+    </div>
+    <div class="form-row"><label>成员 (逗号分隔)</label><input id="pMembers" type="text"></div>
+    <div class="form-row"><label>标签 (逗号分隔)</label><input id="pTags" type="text"></div>
+    <div class="button-row">
+      <button class="btn primary" id="btnSaveProject">保存</button>
+      <button class="btn" onclick="closeModal('modalProject')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Job Form -->
+<div id="modalJob" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="modalJobTitle">新建任务</h3>
+    <div class="form-row"><label>所属项目</label><select id="jProject"></select></div>
+    <div class="form-row"><label>标题</label><input id="jTitle" type="text"></div>
+    <div class="form-row"><label>描述</label><textarea id="jDesc" rows="2"></textarea></div>
+    <div class="form-row">
+      <label>状态</label>
+      <select id="jStatus">
+        <option value="todo">待办</option>
+        <option value="in_progress">进行中</option>
+        <option value="review">评审</option>
+        <option value="done">完成</option>
+        <option value="blocked">阻塞</option>
+      </select>
+      <label>优先级</label>
+      <select id="jPriority">
+        <option value="low">低</option>
+        <option value="medium" selected>中</option>
+        <option value="high">高</option>
+        <option value="urgent">紧急</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>负责人</label><input id="jAssignee" type="text">
+      <label>截止日期</label><input id="jDue" type="date">
+    </div>
+    <div class="form-row">
+      <label>预估工时(h)</label><input id="jEst" type="number" min="0" step="0.5" value="1">
+      <label>实际工时(h)</label><input id="jAct" type="number" min="0" step="0.5" value="0">
+    </div>
+    <div class="form-row"><label>标签</label><input id="jTags" type="text" placeholder="逗号分隔"></div>
+    <div class="button-row">
+      <button class="btn primary" id="btnSaveJob">保存</button>
+      <button class="btn" onclick="closeModal('modalJob')">取消</button>
+    </div>
+  </div>
+</div>
+
+<!-- Snackbar -->
+<div id="snackbar"></div>
+
+<script src="js/data.js"></script>
+<script src="js/bioclock.js"></script>
+<script src="js/attention.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

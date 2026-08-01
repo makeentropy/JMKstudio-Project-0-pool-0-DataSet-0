@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "project": "chronos-project",
+  "description": "Workgroup Job Management + Isochronic Biological Clock + Attention Tracker",
+  "entities": {
+    "Project": {
+      "id": "string (uuid)",
+      "name": "string",
+      "description": "string",
+      "createdAt": "ISO timestamp",
+      "startDate": "ISO date",
+      "endDate": "ISO date",
+      "status": "planning|active|paused|completed",
+      "progress": "number 0-100",
+      "members": ["string"],
+      "tags": ["string"]
+    },
+    "Job": {
+      "id": "string (uuid)",
+      "projectId": "string",
+      "title": "string",
+      "description": "string",
+      "assignee": "string",
+      "status": "todo|in_progress|review|done|blocked",
+      "priority": "low|medium|high|urgent",
+      "estimatedHours": "number",
+      "actualHours": "number",
+      "dueDate": "ISO date",
+      "createdAt": "ISO timestamp",
+      "updatedAt": "ISO timestamp",
+      "dependsOn": ["jobId"],
+      "tags": ["string"]
+    },
+    "BiologicalClockSession": {
+      "id": "string (uuid)",
+      "type": "isochronic|binaural|monaural",
+      "frequencyHz": "number",
+      "carrierFrequencyHz": "number",
+      "durationMinutes": "number",
+      "purpose": "focus|relax|sleep|meditate|energy|custom",
+      "startedAt": "ISO timestamp",
+      "endedAt": "ISO timestamp|null",
+      "completed": "boolean",
+      "volume": "number 0-100"
+    },
+    "AttentionRecord": {
+      "id": "string (uuid)",
+      "timestamp": "ISO timestamp",
+      "sessionId": "string|null",
+      "attentionScore": "number 0-100 (self-reported or estimated)",
+      "arousalLevel": "number 1-5",
+      "task": "string",
+      "note": "string|null"
+    },
+    "SyncState": {
+      "lastWebSync": "ISO timestamp|null",
+      "lastCliSync": "ISO timestamp|null",
+      "version": "number",
+      "conflicts": ["object"]
+    }
+  },
+  "storage": {
+    "web": "localStorage key 'chronos_data_v1'",
+    "cli": "~/.chronos/data.json",
+    "syncFormat": "JSON with entity type prefix IDs"
+  }
+}
