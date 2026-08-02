@@ -65,6 +65,24 @@ from ai_llm_agent_crawler.security.access_control import (
     AccessController,
 )
 
+# BaseXOR 探针
+from ai_llm_agent_crawler.security.basexor import (
+    BaseXORCodec,
+    SignedBlockManifest,
+    ComplianceVerdict,
+    ComplianceCheck,
+    ComplianceItem,
+    ComplianceMatrix,
+    CodeSigningCredential,
+    BaseXORProbe,
+    APTContactLine,
+    build_deb_package,
+    MANIFEST_FORMAT,
+    ca_fingerprint_from_pem,
+    encode_manifest_envelope,
+    decode_manifest_envelope,
+)
+
 __all__ = [
     # 基础加密
     "AESCipher",
@@ -115,4 +133,19 @@ __all__ = [
     "RoleManager",
     "ResourceManager",
     "AccessController",
+    # BaseXOR 探针
+    "BaseXORCodec",
+    "SignedBlockManifest",
+    "ComplianceVerdict",
+    "ComplianceCheck",
+    "ComplianceItem",
+    "ComplianceMatrix",
+    "CodeSigningCredential",
+    "BaseXORProbe",
+    "APTContactLine",
+    "build_deb_package",
+    "MANIFEST_FORMAT",
+    "ca_fingerprint_from_pem",
+    "encode_manifest_envelope",
+    "decode_manifest_envelope",
 ]
