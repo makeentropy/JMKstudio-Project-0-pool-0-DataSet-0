@@ -1105,9 +1105,12 @@ class SnapshotManager:
         return deleted
     
     def _generate_snapshot_id(self, entity_id: str) -> str:
-        """生成快照ID"""
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        hash_part = hashlib.md5(f"{entity_id}_{timestamp}".encode()).hexdigest()[:8]
+        """生成快照ID（微秒级时间戳 + 随机盐避免冲突）"""
+        import random
+        now = datetime.now()
+        timestamp = now.strftime("%Y%m%d%H%M%S") + f"{now.microsecond // 1000:03d}"
+        salt = random.randint(0, 0xFFFF)
+        hash_part = hashlib.md5(f"{entity_id}_{timestamp}_{salt}".encode()).hexdigest()[:8]
         return f"snap_{timestamp}_{hash_part}"
     
     def _calculate_diff(

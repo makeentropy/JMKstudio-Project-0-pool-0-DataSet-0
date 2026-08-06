@@ -60,6 +60,23 @@ from ai_llm_agent_crawler.storage.pool import (
     create_nas_pool,
 )
 
+# 多后端存储池 + 副本复制 + 纠删码（O5）
+from ai_llm_agent_crawler.storage.pools import (
+    PoolType,
+    ObjectInfo,
+    IntegrityReport,
+    StoragePool,
+    LocalPool,
+    NASNfsPool,
+    NASSmbPool,
+    S3Pool,
+    ReplicationResult,
+    ReplicationManager,
+    ReedSolomonCodec,
+    gf_mul,
+    gf_div,
+)
+
 __all__ = [
     # 存储后端
     "StorageBackend",
@@ -99,4 +116,18 @@ __all__ = [
     "NASStoragePool",
     "NASStoragePoolConfig",
     "create_nas_pool",
+    # 多后端存储池 + 副本复制 + 纠删码（O5）
+    "PoolType",
+    "ObjectInfo",
+    "IntegrityReport",
+    "StoragePool",
+    "LocalPool",
+    "NASNfsPool",
+    "NASSmbPool",
+    "S3Pool",
+    "ReplicationResult",
+    "ReplicationManager",
+    "ReedSolomonCodec",
+    "gf_mul",
+    "gf_div",
 ]

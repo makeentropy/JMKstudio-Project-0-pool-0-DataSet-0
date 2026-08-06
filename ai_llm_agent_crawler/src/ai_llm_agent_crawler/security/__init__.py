@@ -65,6 +65,28 @@ from ai_llm_agent_crawler.security.access_control import (
     AccessController,
 )
 
+# 数据保全与安全校验链（O3：Merkle + GPG CA + baseXOR-Prober + HashChain）
+from ai_llm_agent_crawler.security.integrity_chain import (
+    HashAlgo,
+    hash_bytes,
+    hash_file,
+    MerkleNode,
+    MerkleProof,
+    MerkleTree,
+    MerkleDAGNode,
+    MerkleDAGBuilder,
+    SnapshotSignature,
+    SnapshotSigner,
+    AnchorValidationResult,
+    AnchorRecord,
+    ProbeReport,
+    BaseXORProber,
+    DistributedProber,
+    ChainEntry,
+    ChainConsensus,
+    HashChainLedger,
+)
+
 __all__ = [
     # 基础加密
     "AESCipher",
@@ -115,4 +137,23 @@ __all__ = [
     "RoleManager",
     "ResourceManager",
     "AccessController",
+    # 数据保全与安全校验链（O3）
+    "HashAlgo",
+    "hash_bytes",
+    "hash_file",
+    "MerkleNode",
+    "MerkleProof",
+    "MerkleTree",
+    "MerkleDAGNode",
+    "MerkleDAGBuilder",
+    "SnapshotSignature",
+    "SnapshotSigner",
+    "AnchorValidationResult",
+    "AnchorRecord",
+    "ProbeReport",
+    "BaseXORProber",
+    "DistributedProber",
+    "ChainEntry",
+    "ChainConsensus",
+    "HashChainLedger",
 ]
