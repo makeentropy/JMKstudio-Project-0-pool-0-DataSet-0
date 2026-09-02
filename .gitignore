@@ -1,0 +1,14 @@
+# 运行时数据（本地数据空间，不入库）
+.prober/
+.frp/
+data/
+serve.log
+*.pid
+node_modules/
+
+# 构建产物
+*.tar.gz
+
+# 系统文件
+.DS_Store
+Thumbs.db
